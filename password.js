@@ -11,7 +11,7 @@ var ar1 = {};
 
 var xhr = new XMLHttpRequest();
 var serverData = 'hello';
-xhr.open('POST', 'https://palexandrov.000webhostapp.com/public_html/index.php');
+xhr.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
 xhr.send("serverData=" + serverData);
 
 
