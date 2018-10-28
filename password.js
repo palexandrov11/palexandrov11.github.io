@@ -40,11 +40,7 @@ window.addEventListener("keyup", event => {
      }
   }
 
-  document.getElementById('test1').innerHTML = ar; 
-  $.ajax({
-     type: "POST",
-     url: "http://palexandrov.000webhostapp.com/index.php",
-     data: "c_up=" + c_up});
+  document.getElementById('arr').innerHTML = keyCode1;
 };
 
 
