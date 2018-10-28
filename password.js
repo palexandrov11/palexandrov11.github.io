@@ -40,7 +40,7 @@ window.addEventListener("keyup", event => {
       document.getElementById('test1').innerHTML = ar;
      }
   }
-};
+});
 
 
 
