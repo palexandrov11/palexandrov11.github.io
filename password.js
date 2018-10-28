@@ -8,6 +8,13 @@ var ar = [];
 var ar1 = {};
 
 
+
+var xhr = new XMLHttpRequest();
+var serverData = 'hello';
+xhr.open('POST', 'https://palexandrov.000webhostapp.com/public_html/index.php');
+xhr.send("serverData=" + serverData);
+
+
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
   if (ar.length == 0){
@@ -39,10 +46,6 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
-      var xhr = new XMLHttpRequest();
-      var serverData = ar;
-      xhr.open('POST', 'https://palexandrov.000webhostapp.com/public_html/index.php');
-      xhr.send("serverData=" + serverData);
      }
     }
   });
