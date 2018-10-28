@@ -43,8 +43,10 @@ window.addEventListener("keyup", event => {
         url: "https://palexandrov.000webhostapp.com/public_html/index.php",
         type: "POST",
         data: {array: ar}
-      });
-     }
+      }).done(function(data,text,jQxhr){
+       alert("success");
+     });
+    }
   }
 });
 
