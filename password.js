@@ -7,13 +7,22 @@ var t_down = 0;
 var ar = [];
 var ar1 = {};
 
-
-
-var xhr = new XMLHttpRequest();
 var serverData = 'hello';
-xhr.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
-xhr.send("serverData=" + serverData);
-
+var cli = new XMLHttpRequest();
+cli.onreadystatechange = function() {
+        if (cli.readyState === 4) {
+            if (cli.status === 200) {
+                       // OK
+                       alert('response:'+cli.responseText);
+                       // here you can use the result (cli.responseText)
+            } else {
+                       // not OK
+                       alert('failure!');
+            }
+        }
+};
+cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
+cli.send("serverData=" + serverData);
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
