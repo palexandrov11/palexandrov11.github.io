@@ -21,8 +21,8 @@ cli.onreadystatechange = function() {
             }
         }
 };
-cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
-cli.send("serverData=" + serverData);
+cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php');
+cli.send();
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
