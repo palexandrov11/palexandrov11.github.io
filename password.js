@@ -37,7 +37,6 @@ window.addEventListener("keyup", event => {
       ar1 = {};
         c_up = 0;
       c_down = 0;
-      ar.pop()
       document.getElementById('test1').innerHTML = ar;
      }
   }
