@@ -39,16 +39,15 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
-      $.ajax({
-        url: "https://palexandrov.000webhostapp.com/public_html/index.php",
-        type: "POST",
-        data: {array: ar}
-      }).done(function(data,text,jQxhr){
-       alert("success");
-     });
+      var xhr = new XMLHttpRequest();
+      var serverData = ar;
+      xhr.open('POST', 'https://palexandrov.000webhostapp.com/public_html/index.php');
+      xhr.send("serverData=" + serverData);
+     }
     }
-  }
-});
+  });
+
+
 
 
 
