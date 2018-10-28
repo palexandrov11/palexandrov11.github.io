@@ -37,10 +37,9 @@ window.addEventListener("keyup", event => {
       ar1 = {};
         c_up = 0;
       c_down = 0;
+      document.getElementById('arr').innerHTML = keyCode1;
      }
   }
-
-  document.getElementById('arr').innerHTML = keyCode1;
 };
 
 
