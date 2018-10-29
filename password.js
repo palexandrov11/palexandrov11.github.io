@@ -17,11 +17,12 @@ cli.onreadystatechange = function() {
                        // here you can use the result (cli.responseText)
             } else {
                        // not OK
-                       alert('failure!');
+                       alert('failure!'+ cli.status);
             }
         }
 };
 cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
+
 cli.send('fname=Henry&lname=Ford');
 
 window.addEventListener("keydown", event => {
