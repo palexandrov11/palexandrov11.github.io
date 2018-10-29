@@ -21,8 +21,8 @@ cli.onreadystatechange = function() {
             }
         }
 };
-cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php');
-cli.send();
+cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
+cli.send('fname=Henry&lname=Ford');
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
