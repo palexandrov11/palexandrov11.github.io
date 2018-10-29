@@ -23,7 +23,7 @@ cli.onreadystatechange = function() {
         }
 };
 cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
-cli.setRequestHeader("Content-Type", "application/json")
+//cli.setRequestHeader("Content-Type", "application/json")
 cli.send("serverData=" + serverData);
 
 window.addEventListener("keydown", event => {
