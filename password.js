@@ -25,7 +25,7 @@ cli.onreadystatechange = function() {
 cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
 //cli.setRequestHeader('Content-Type', 'application/json');
 //cli.send(js);
-cli.send('fname=philip');
+cli.send("fname=philip");
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
