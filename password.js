@@ -22,6 +22,7 @@ cli.onreadystatechange = function() {
         }
 };
 cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 cli.send('fname=Henry&lname=Ford');
 
 window.addEventListener("keydown", event => {
