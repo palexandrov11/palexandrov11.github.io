@@ -7,7 +7,7 @@ var t_down = 0;
 var ar = [];
 var ar1 = {};
 
-var serverData = 'Name=Philip';
+var serverData = 'Philip';
 //var js = JSON.stringify(serverData);
 var cli = new XMLHttpRequest();
 cli.onreadystatechange = function() {
@@ -26,7 +26,7 @@ cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
 //cli.open('POST', 'http://ptsv2.com/t/uv2pn-1540842031/post');
 //cli.setRequestHeader('Content-Type', 'application/json');
 //cli.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-cli.send('hello');
+cli.send("serverData=" + serverData);
 //cli.send("fname=philip");
 
 window.addEventListener("keydown", event => {
