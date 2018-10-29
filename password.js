@@ -7,8 +7,7 @@ var t_down = 0;
 var ar = [];
 var ar1 = {};
 
-var sd = "YOOOOOOOO"
-var serverData = JSON.stringify(sd);
+var serverData = 'hello';
 var cli = new XMLHttpRequest();
 cli.onreadystatechange = function() {
         if (cli.readyState === 4) {
@@ -23,8 +22,7 @@ cli.onreadystatechange = function() {
         }
 };
 cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
-//cli.setRequestHeader("Content-Type", "application/json")
-cli.send("serverData=" + serverData);
+cli.send('fname=Henry&lname=Ford');
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
