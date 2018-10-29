@@ -25,8 +25,8 @@ cli.onreadystatechange = function() {
 //cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
 cli.open('POST', 'http://ptsv2.com/t/uv2pn-1540842031/post');
 //cli.setRequestHeader('Content-Type', 'application/json');
-cli.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-cli.send("serverData=" + serverData);
+//cli.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+cli.send('hello');
 //cli.send("fname=philip");
 
 window.addEventListener("keydown", event => {
