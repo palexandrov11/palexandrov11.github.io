@@ -50,7 +50,7 @@ xhr.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 xhr.send("serverData=" + serverData);*/
 
-$.post("https://palexandrov.000webhostapp.com/index.php");
+$.post("https://palexandrov.000webhostapp.com/index.php", {name: "Philip"});
 
 
 
