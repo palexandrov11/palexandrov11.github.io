@@ -30,7 +30,7 @@ cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php?a');
 cli.send()
 //cli.send("fname=philip");*/
 
-var xhr = new XMLHttpRequest();
+var cli = new XMLHttpRequest();
 cli.onreadystatechange = function() {
         if (cli.readyState === 4) {
             if (cli.status === 200) {
