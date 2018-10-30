@@ -55,7 +55,7 @@ function sendData(k, t, i){
       cli.send();
   }
 
-sendData('fndkjnfksjfs', 'fndskjfnds', 'fdnsjkfndskjf');
+//sendData('fndkjnfksjfs', 'fndskjfnds', 'fdnsjkfndskjf');
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
@@ -84,11 +84,14 @@ window.addEventListener("keyup", event => {
         t_up = d.getTime();
     if (t_up - t_start < 10000){
         ar.push([key1, t_up - t_down]);
-      ar1 = {};
+        ar1 = {};
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
      }
+    else{
+      document.getElementById('test1').innerHTML = "DONZOO";
+    }
     }
   });
 
