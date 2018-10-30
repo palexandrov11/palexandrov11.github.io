@@ -36,7 +36,7 @@ cli.send()
 //var data = "fname=jerry";
 //var serverData = data.serialize()
 //$.get("https://palexandrov.000webhostapp.com/index.php?a");
-function sendData(k, t, i, o){
+function sendData(user,k, t, i, o){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
@@ -50,8 +50,8 @@ function sendData(k, t, i, o){
                   }
               }
       };
-      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'key=' + String(k) 
-      + '&' + 'duration=' + String(t) + '&' + 'stamp=' + String(i) + 'opt=' + o;
+      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + user + '&'
+      'key=' + String(k) + '&' + 'duration=' + String(t) + '&' + 'stamp=' + String(i) + '&' + 'opt=' + o;
       cli.open('POST', url);
       cli.send();
   }
@@ -89,11 +89,11 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
-      sendData(key1.join(""), t_up - t_down, t_up, "1");
+      sendData("philip", key1.join(""), t_up - t_down, t_up, "1");
      }
     else{
       document.getElementById('test1').innerHTML = "DONZOO";
-      sendData(key1.join(""), t_up - t_down, t_up, "0");
+      sendData("philip", key1.join(""), t_up - t_down, t_up, "0");
     }
     }
   });
