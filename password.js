@@ -89,7 +89,7 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
-      sendData(key1, t_up - t_down, t_up);
+      sendData('wtf', t_up - t_down, t_up);
      }
     else{
       document.getElementById('test1').innerHTML = "DONZOO";
