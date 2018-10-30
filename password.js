@@ -31,7 +31,7 @@ cli.send()
 //cli.send("fname=philip");*/
 
 var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
+cli.onreadystatechange = function() {
         if (cli.readyState === 4) {
             if (cli.status === 200) {
                        // OK
@@ -45,8 +45,8 @@ xhr.onreadystatechange = function() {
 };
 
 
-xhr.open('GET', 'https://palexandrov.000webhostapp.com/index.php?a');
-xhr.send();
+cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php?a=jerry');
+cli.send();
 
 //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 //xhr.send("serverData=" + serverData);
