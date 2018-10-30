@@ -30,7 +30,7 @@ cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php?a');
 cli.send()
 //cli.send("fname=philip");*/
 
-var xhr = new XMLHttpRequest();
+/*var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
         if (cli.readyState === 4) {
             if (cli.status === 200) {
@@ -48,7 +48,9 @@ var data = "name=philip";
 var serverData = encodeURI(data);
 xhr.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-xhr.send("serverData=" + serverData);
+xhr.send("serverData=" + serverData);*/
+
+$.post("https://palexandrov.000webhostapp.com/index.php");
 
 
 
