@@ -7,7 +7,7 @@ var t_down = 0;
 var ar = [];
 var ar1 = {};
 
-var serverData = 'Philip';
+/*var serverData = 'Philip';
 //var js = JSON.stringify(serverData);
 var cli = new XMLHttpRequest();
 cli.onreadystatechange = function() {
@@ -28,7 +28,29 @@ cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php?a');
 //cli.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 //cli.send("serverData=" + serverData);
 cli.send()
-//cli.send("fname=philip");
+//cli.send("fname=philip");*/
+
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+        if (cli.readyState === 4) {
+            if (cli.status === 200) {
+                       // OK
+                       alert('response:'+cli.responseText);
+                       // here you can use the result (cli.responseText)
+            } else {
+                       // not OK
+                       alert('failure!'+ cli.status);
+            }
+        }
+};
+
+var data = "name=philip";
+var serverData = encodeURI(data);
+xhr.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.send("serverData=" + serverData);
+
+
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
