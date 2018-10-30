@@ -30,32 +30,32 @@ cli.open('GET', 'https://palexandrov.000webhostapp.com/index.php?a');
 cli.send()
 //cli.send("fname=philip");*/
 
-var cli = new XMLHttpRequest();
-cli.onreadystatechange = function() {
-        if (cli.readyState === 4) {
-            if (cli.status === 200) {
-                       // OK
-                       alert('response:'+cli.responseText);
-                       // here you can use the result (cli.responseText)
-            } else {
-                       // not OK
-                       alert('failure!'+ cli.status);
-            }
-        }
-};
-
-
-cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php?a=123');
-cli.send();
-
 //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 //xhr.send("serverData=" + serverData);
 
 //var data = "fname=jerry";
 //var serverData = data.serialize()
 //$.get("https://palexandrov.000webhostapp.com/index.php?a");
+function sendData(k, t, i){
+      var cli = new XMLHttpRequest();
+      cli.onreadystatechange = function() {
+              if (cli.readyState === 4) {
+                  if (cli.status === 200) {
+                             // OK
+                             alert('response:'+cli.responseText);
+                             // here you can use the result (cli.responseText)
+                  } else {
+                             // not OK
+                             alert('failure!'+ cli.status);
+                  }
+              }
+      };
+      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'key=' + k + '&' + 'duration=' + t + '&' + 'stamp=' + i;
+      cli.open('POST', url);
+      cli.send();
+  }
 
-
+sendData('fndkjnfksjfs', 'fndskjfnds', 'fdnsjkfndskjf');
 
 window.addEventListener("keydown", event => {
     c_down = c_down + 1;
