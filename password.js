@@ -45,8 +45,8 @@ cli.onreadystatechange = function() {
 };
 
 
-cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php');
-cli.send('a=philip');
+cli.open('POST', 'https://palexandrov.000webhostapp.com/index.php?a=philip');
+cli.send();
 
 //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 //xhr.send("serverData=" + serverData);
