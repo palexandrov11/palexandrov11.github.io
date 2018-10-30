@@ -52,7 +52,7 @@ xhr.send("serverData=" + serverData);*/
 
 //var data = "fname=jerry";
 //var serverData = data.serialize()
-$.post("https://palexandrov.000webhostapp.com/index.php");
+$.get("https://palexandrov.000webhostapp.com/index.php?a");
 
 
 
