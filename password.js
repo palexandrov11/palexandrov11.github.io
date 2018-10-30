@@ -50,7 +50,8 @@ function sendData(k, t, i){
                   }
               }
       };
-      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'key=' + k + '&' + 'duration=' + t + '&' + 'stamp=' + i;
+      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'key=' + String(k) 
+      + '&' + 'duration=' + String(t) + '&' + 'stamp=' + String(i);
       cli.open('POST', url);
       cli.send();
   }
@@ -88,6 +89,7 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
+      sendData(key1, t_up - t_down, t_up);
      }
     else{
       document.getElementById('test1').innerHTML = "DONZOO";
