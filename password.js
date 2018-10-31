@@ -6,6 +6,8 @@ var t_up = 0;
 var t_down = 0;
 var ar = [];
 var ar1 = {};
+var step_d = 0;
+var step_u = 0;
 
 /*var serverData = 'Philip';
 //var js = JSON.stringify(serverData);
@@ -36,7 +38,7 @@ cli.send()
 //var data = "fname=jerry";
 //var serverData = data.serialize()
 //$.get("https://palexandrov.000webhostapp.com/index.php?a");
-function sendData(user,k, t, i, o){
+function sendData(user, step, k, d,){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
@@ -50,8 +52,8 @@ function sendData(user,k, t, i, o){
                   }
               }
       };
-      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + user + '&' +
-      'key=' + String(k) + '&' + 'duration=' + String(t) + '&' + 'stamp=' + String(i) + '&' + 'opt=' + o;
+      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
+      'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
       cli.open('POST', url);
       cli.send();
   }
@@ -68,8 +70,10 @@ window.addEventListener("keydown", event => {
     d = new Date();
     t_down = d.getTime();
     if (ar.length != 0){
-        t_pause = t_down - t_up;
+      t_pause = t_down - t_up;
+      send_d = step_d + 1;
       ar.push([t_pause])
+      sendData("philip", step_d, '', t_pause);
     }
   }
   if (!ar1.hasOwnProperty(event.keyCode)){
@@ -78,6 +82,7 @@ window.addEventListener("keydown", event => {
   });                                                                                               
   
 window.addEventListener("keyup", event => {
+    step_u = step_u + 1;
     c_up = c_up + 1;
   key1 = Object.keys(ar1);
   if (c_up == key1.length){
@@ -89,11 +94,10 @@ window.addEventListener("keyup", event => {
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
-      sendData("philip", key1.join(""), t_up - t_down, t_up, "1");
+      sendData("philip", step_u, key1.join(""), t_up - t_down);
      }
     else{
       document.getElementById('test1').innerHTML = "DONZOO";
-      sendData("philip", key1.join(""), t_up - t_down, t_up, "0");
     }
     }
   });
