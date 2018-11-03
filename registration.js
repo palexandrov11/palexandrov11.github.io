@@ -1,5 +1,3 @@
-var btn = document.querySelector("input[value= 'Submit']");
-var txt = document.querySelector('p');
 
 function sendData(user, step, k, d,){
       var cli = new XMLHttpRequest();
@@ -9,6 +7,9 @@ function sendData(user, step, k, d,){
       cli.send();
   }
 
-btn.addEventListener("click", event => {
-	document.getElementById('test').innerHTML = "YOOOOOOOOO";
-});
+
+function checkUser(){
+	var u = document.getElementById("username").value;
+	sendData(u, 0, 0, 0);
+	document.getElementById("demo").innerHTML = "username is being verified" + u;
+}
