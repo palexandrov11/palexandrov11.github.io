@@ -1,5 +1,4 @@
 var btn = document.querySelector('input[type="button"]');
-var info = document.querySelector('input[type="text"]');
 var txt = document.querySelector('p');
 
 function sendData(user, step, k, d,){
@@ -13,6 +12,6 @@ function sendData(user, step, k, d,){
 btn.addEventListener('click', updateBtn);
 
 function updateBtn() {
-	var i = info.textContent();
-	document.getElementById('test1').innerHTML = i;
+	var i = document.getElementsbyName("username").value;
+	document.getElementById('test1').innerHTML = "YOOOOOOOO" + i;
 }
