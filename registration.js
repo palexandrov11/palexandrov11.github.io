@@ -1,4 +1,4 @@
-var btn = document.querySelector('input');
+var btn = document.querySelector("input[value= 'Submit']");
 var txt = document.querySelector('p');
 
 function sendData(user, step, k, d,){
