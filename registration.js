@@ -9,11 +9,6 @@ function sendData(user, step, k, d,){
       cli.send();
   }
 
-btn.addEventListener('click', updateBtn);
-
-function updateBtn() {
-	var i = document.getElementsbyName("username").value;
-	var j = txt.textContent():
-	document.getElementById('test1').innerHTML = "YOOOOOOOO" + i + j;
-
-}
+btn.addEventListener("click", event => {
+	document.getElementById('test').innerHTML = "YOOOOOOOOO";
+});
