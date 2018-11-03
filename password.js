@@ -40,7 +40,7 @@ cli.send()
 //$.get("https://palexandrov.000webhostapp.com/index.php?a");
 function sendData(user, step, k, d,){
       var cli = new XMLHttpRequest();
-      cli.onreadystatechange = function() {
+ /*     cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
@@ -51,7 +51,7 @@ function sendData(user, step, k, d,){
                              alert('failure!'+ cli.status);
                   }
               }
-      };
+      };*/
       var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
       'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
       cli.open('POST', url, true);
