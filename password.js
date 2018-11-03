@@ -55,7 +55,7 @@ function sendData(user, step, k, d,){
       var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
       'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
       cli.open('POST', url, true);
-      cli.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      cli.setRequestHeader('Content-type': 'application/x-www-form-urlencoded');
       cli.send();
   }
 
