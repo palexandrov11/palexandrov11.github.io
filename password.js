@@ -7,7 +7,7 @@ var t_down = 0;
 var ar = [];
 var ar1 = {};
 var step_d = 0;
-var step_u = 0;
+var step_u = -1;
 
 /*var serverData = 'Philip';
 //var js = JSON.stringify(serverData);
@@ -71,7 +71,7 @@ window.addEventListener("keydown", event => {
     t_down = d.getTime();
     if (ar.length != 0){
       t_pause = t_down - t_up;
-      step_d = step_d + 1;
+      step_d = step_d + 2;
       ar.push([t_pause])
       sendData("philip", step_d, '', t_pause);
     }
@@ -90,7 +90,7 @@ window.addEventListener("keyup", event => {
     if (t_up - t_start < 10000){
         ar.push([key1, t_up - t_down]);
         ar1 = {};
-        step_u = step_u + 1;
+        step_u = step_u + 2;
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
