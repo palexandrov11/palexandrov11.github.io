@@ -71,7 +71,7 @@ window.addEventListener("keydown", event => {
     t_down = d.getTime();
     if (ar.length != 0){
       t_pause = t_down - t_up;
-      send_d = step_d + 1;
+      step_d = step_d + 1;
       ar.push([t_pause])
       sendData("philip", step_d, '', t_pause);
     }
