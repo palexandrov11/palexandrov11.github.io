@@ -13,7 +13,12 @@ function checkUser(){
 	document.getElementById("demo").innerHTML = "username is being verified" + u;
 }
 
-var btn = document.getElementById("btn");
-btn.addEventListener("click", checkUser);
+//var btn = document.getElementById("btn");
 
+
+window.addEventListener("click", event => {
+	var u = document.getElementById('username').value;
+	document.getElementById('response').innerHTML = "username is being verified" + u;
+	document.getElementById('test1').innerHTML = "username" + u;
+});
 
