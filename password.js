@@ -82,7 +82,6 @@ window.addEventListener("keydown", event => {
   });                                                                                               
   
 window.addEventListener("keyup", event => {
-    step_u = step_u + 1;
     c_up = c_up + 1;
   key1 = Object.keys(ar1);
   if (c_up == key1.length){
@@ -91,6 +90,7 @@ window.addEventListener("keyup", event => {
     if (t_up - t_start < 10000){
         ar.push([key1, t_up - t_down]);
         ar1 = {};
+        step_u = step_u + 1;
         c_up = 0;
       c_down = 0;
       document.getElementById('test1').innerHTML = ar;
