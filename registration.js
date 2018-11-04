@@ -22,11 +22,12 @@ function sendData(user, step, k, d,){
 
 
 window.addEventListener("click", event => {
-
 	var u = document.getElementById('username').value;
-	var r = sendData()
-	document.getElementById('response').innerHTML = "username is being verified" + r;
-	document.getElementById('test1').innerHTML = "username" + u;
-	
+	if(u !== null){
+		var r = sendData();
+		document.getElementById('response').innerHTML = "username is being verified" + r;
+		document.getElementById('test1').innerHTML = "username" + u;
+	}
+		
 });
 
