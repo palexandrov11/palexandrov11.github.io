@@ -27,5 +27,6 @@ window.addEventListener("click", event => {
 	var r = sendData()
 	document.getElementById('response').innerHTML = "username is being verified" + r;
 	document.getElementById('test1').innerHTML = "username" + u;
+	
 });
 
