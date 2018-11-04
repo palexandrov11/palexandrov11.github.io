@@ -23,7 +23,7 @@ function sendData(user, step, k, d,){
 
 window.addEventListener("click", event => {
 	var u = document.getElementById('username').value;
-	if(u !== null){
+	if(u.length != 0){
 		var r = sendData();
 		document.getElementById('response').innerHTML = "username is being verified" + r;
 		document.getElementById('test1').innerHTML = "username" + u;
