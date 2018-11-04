@@ -4,7 +4,7 @@ function sendData(user, step, k, d,){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
-                             alert('response:'+cli.responseText);
+                             return cli.responseText;
                              // here you can use the result (cli.responseText)
                   } else {
                              // not OK
@@ -16,7 +16,6 @@ function sendData(user, step, k, d,){
       'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
       cli.open('POST', url, true);
       cli.send();
-      return cli.responseText;
   }
 
 //var btn = document.getElementById("btn");
