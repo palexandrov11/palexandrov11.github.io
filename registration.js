@@ -1,24 +1,32 @@
-
-
 function sendData(user, step, k, d,){
       var cli = new XMLHttpRequest();
+      cli.onreadystatechange = function() {
+              if (cli.readyState === 4) {
+                  if (cli.status === 200) {
+                             // OK
+                             alert('response:'+cli.responseText);
+                             // here you can use the result (cli.responseText)
+                  } else {
+                             // not OK
+                             alert('failure!'+ cli.status);
+                  }
+              }
+      };
       var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
       'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
       cli.open('POST', url, true);
       cli.send();
+      return cli.responseText;
   }
-function checkUser(){
-	var u = document.getElementById("username").value;
-	sendData(u, 0, 0, 0);
-	document.getElementById("demo").innerHTML = "username is being verified" + u;
-}
 
 //var btn = document.getElementById("btn");
 
 
 window.addEventListener("click", event => {
+
 	var u = document.getElementById('username').value;
-	document.getElementById('response').innerHTML = "username is being verified" + u;
+	var r = sendData()
+	document.getElementById('response').innerHTML = "username is being verified" + r;
 	document.getElementById('test1').innerHTML = "username" + u;
 });
 
