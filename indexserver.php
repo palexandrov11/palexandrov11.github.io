@@ -14,12 +14,12 @@ $username = "id7448806_pa";
 $password = "55555";
 $database = "id7448806_localhost";
 
-print_r($_POST);
-if($_POST["serverData"] === "") echo "a is an empty string\n";
-if($_POST["serverData"] === false) echo "a is false\n";
-if($_POST["serverData"] === null) echo "a is null\n";
-if(isset($_POST["serverData"])) echo "a is set\n";
-if(!empty($_POST["serverData"])) echo "a is not empty";
+print_r($_GET);
+if($_GET["serverData"] === "") echo "a is an empty string\n";
+if($_GET["serverData"] === false) echo "a is false\n";
+if($_GET["serverData"] === null) echo "a is null\n";
+if(isset($_GET["serverData"])) echo "a is set\n";
+if(!empty($_GET["serverData"])) echo "a is not empty";
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
     echo "success";

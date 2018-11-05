@@ -15,10 +15,16 @@ function sendData(user, step, k, d){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
-                             parser = new DOMParser();
-                             htmlDoc = parser.parseFromString(cli.responseText, "text/html");
-                             alert(htmlDoc.getElementsByTagName("div"));
-                             return htmlDoc.getElementsByTagName("dive");
+                             var parser = new DOMParser();
+                             var htmlDoc = parser.parseFromString(cli.responseText, "text/html");
+                          //   alert(htmlDoc.getElementsByTagName("div"));
+                          //   return htmlDoc.getElementsByTagName("div");
+                             var elem = htmlDoc.getElementsByTagName("div");
+                             var arr = [].slice.call(elem);
+                             var genres = arr.map(function(el){
+                                   return el.value;
+                             }).join(', ');
+                             window.alert(genres);
                              // here you can use the result (cli.responseText)
                   } else {
                              // not OK
