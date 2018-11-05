@@ -14,8 +14,11 @@ function sendData(user, step, k, d){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
+                          var r = callback.call(cli.ResponseText);
+                          alert(r);
+                          return r;
                              // OK
-                             var parser = new DOMParser();
+                         /*    var parser = new DOMParser();
                              var htmlDoc = parser.parseFromString(cli.responseText, "text/html");
                           //   alert(htmlDoc.getElementsByTagName("div"));
                           //   return htmlDoc.getElementsByTagName("div");
@@ -24,7 +27,7 @@ function sendData(user, step, k, d){
                              var genres = arr.map(function(el){
                                    return el.value;
                              }).join(', ');
-                             window.alert(genres);
+                             window.alert(genres);*/
                              // here you can use the result (cli.responseText)
                   } else {
                              // not OK
