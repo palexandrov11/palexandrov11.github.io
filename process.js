@@ -16,8 +16,8 @@ function sendData(user, step, k, d){
                   if (cli.status === 200) {
                              // OK
                              parser = new DOMParser();
-                             htmlDoc = parser.parseFromString(cli.responseText(), "text/html");
-                             alert(cli.responseText());
+                             htmlDoc = parser.parseFromString(cli.responseText, "text/html");
+                             alert(cli.responseText);
                              return htmlDoc
                              // here you can use the result (cli.responseText)
                   } else {
