@@ -15,8 +15,8 @@ function sendData(user, step, k, d){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
-                             alert(cli.responseText);
-                             return cli.responseText;
+                             alert(cli.responseType);
+                             return cli.responseType;
                              // here you can use the result (cli.responseText)
                   } else {
                              // not OK
