@@ -17,7 +17,7 @@ function sendData(user, step, k, d){
                              // OK
                              parser = new DOMParser();
                              htmlDoc = parser.parseFromString(cli.responseText, "text/html");
-                             alert(htmlDoc);
+                             alert(htmlDoc.body.innerHTML);
                              return htmlDoc;
                              // here you can use the result (cli.responseText)
                   } else {
