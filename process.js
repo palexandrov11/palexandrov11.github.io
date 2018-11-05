@@ -14,7 +14,7 @@ function sendData(user, step, k, d){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          var r = callback.call(cli.ResponseText);
+                          var r = cli.ResponseText;
                           alert(r);
                           return r;
                              // OK
@@ -37,7 +37,7 @@ function sendData(user, step, k, d){
       };
       var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
       'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
-      cli.open('POST', url, true);
+      cli.open('POST', url, false);
       cli.send();
   }
 
