@@ -15,8 +15,10 @@ function sendData(user, step, k, d){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
-                             console.log(typeof cli.responseText);
-                             return toString(cli.responseText);
+                             parser = new DOMParser();
+                             htmlDoc = parser.parseFromString(cli.responseText(), "text/html");
+                             alert(cli.responseText());
+                             return htmlDoc
                              // here you can use the result (cli.responseText)
                   } else {
                              // not OK
