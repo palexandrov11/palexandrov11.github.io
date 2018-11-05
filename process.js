@@ -9,12 +9,13 @@ var ar1 = {};
 var step_d = 0;
 var step_u = -1;
 
-function sendData(user, step, k, d,){
+function sendData(user, step, k, d){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
+                             alert(cli.responseText);
                              return cli.responseText;
                              // here you can use the result (cli.responseText)
                   } else {
