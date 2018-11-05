@@ -15,7 +15,7 @@ function sendData(user, step, k, d){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                              // OK
-                             alert(cli.responseText);
+                             console.log(typeof cli.responseText);
                              return toString(cli.responseText);
                              // here you can use the result (cli.responseText)
                   } else {
