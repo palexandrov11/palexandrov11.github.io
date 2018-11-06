@@ -52,12 +52,12 @@ function checkUser(){
   sendData(user, 0, 0, 0);
   if (toString(r) === toString(0)){
     document.getElementById('response').innerHTML = "Username " + user + " is available";
-    document.getElementById('username').reset();
+    document.getElementById('username').innerHTML = null;
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } else{
     document.getElementById('response').innerHTML = "Username " + user + " is taken";
-    document.getElementById('username').reset();
+    document.getElementById('username').innerHTML = null;
 
   }
 }
