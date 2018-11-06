@@ -15,24 +15,8 @@ function sendData(user, step, k, d){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          alert(cli.responseText);
-                          document.getElementById('response').innerHTML = cli.responseText;
                           r = cli.responseText;
-
-                             // OK
-                         /*    var parser = new DOMParser();
-                             var htmlDoc = parser.parseFromString(cli.responseText, "text/html");
-                          //   alert(htmlDoc.getElementsByTagName("div"));
-                          //   return htmlDoc.getElementsByTagName("div");
-                             var elem = htmlDoc.getElementsByTagName("div");
-                             var arr = [].slice.call(elem);
-                             var genres = arr.map(function(el){
-                                   return el.value;
-                             }).join(', ');
-                             window.alert(genres);*/
-                             // here you can use the result (cli.responseText)
                   } else {
-                             // not OK
                              alert('failure!'+ cli.status);
                   }
               }
@@ -64,15 +48,16 @@ function sendData(user, step, k, d){
 
 
 function checkUser(){
-  var u = document.getElementById('username').value;
-  sendData(u, 0, 0, 0);
-  alert(typeof(r));
+  document.getElementById('username').innerHTML = '';
+  var user = document.getElementById('username').value;
+  sendData(user, 0, 0, 0);
   if (toString(r) === toString(0)){
-    document.getElementById('response1').innerHTML = "username " + u + " is available";
-    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
+    document.getElementById('response').innerHTML = "Username " + user + " is available";
+    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } else{
-    document.getElementById('response1').innerHTML = "usernameUsername " + u + " is taken";
+    document.getElementById('response').innerHTML = "Username " + user + " is taken";
+
   }
 }
 
