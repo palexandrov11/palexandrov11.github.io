@@ -60,7 +60,7 @@ window.onload() = function(){
 function checkUser(){
   var u = document.getElementById('username').value;
   document.getElementById('response').innerHTML = u;
-
+  document.getElementById("button").style.display = 'block';
 }
 
 
