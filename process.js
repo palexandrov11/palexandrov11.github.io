@@ -16,7 +16,7 @@ function sendData(user, step, k, d){
                   if (cli.status === 200) {
                           alert(cli.responseText);
                           document.getElementById('response').innerHTML = cli.responseText;
-                          return r;
+                          return cli.responseText;
                              // OK
                          /*    var parser = new DOMParser();
                              var htmlDoc = parser.parseFromString(cli.responseText, "text/html");
@@ -63,10 +63,11 @@ function sendData(user, step, k, d){
 
 function checkUser(){
   var u = document.getElementById('username').value;
-  document.getElementById('response').innerHTML = "username " + u + "is available";
+  var r = sendData(u, 0, 0, 0);
+  document.getElementById('response1').innerHTML = r;
   document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
-  document.getElementById('begin').innerHTML = "Listening...";
   document.getElementById('button').style.display = 'block';
+  document.getElementById('begin').innerHTML = "Listening...";
 }
 
 
