@@ -14,7 +14,7 @@ function sendData(user, step, k, d){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          var r = onComplete(cli.ResponseText);
+                          var r = onComplete(cli.responseText);
                           alert(r);
                           return r;
                              // OK
