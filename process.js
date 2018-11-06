@@ -65,7 +65,7 @@ function checkUser(){
   var u = document.getElementById('username').value;
   document.getElementById('response').innerHTML = "username " + u + "is available";
   document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
-  document.getElementById('begin').innerHTML = "Listening..."
+  document.getElementById('begin').innerHTML = "Listening...";
   document.getElementById('button').style.display = 'block';
 }
 
