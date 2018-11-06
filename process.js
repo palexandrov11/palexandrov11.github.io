@@ -48,7 +48,8 @@ function sendData(user, step, k, d){
 
 
 function checkUser(){
-  document.getElementById('username').innerHTML = '';
+  var x = document.getElementById('username').value;
+  alert(x);
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0);
   if (toString(r) === toString(0)){
