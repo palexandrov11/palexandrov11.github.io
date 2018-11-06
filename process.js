@@ -63,12 +63,15 @@ function sendData(user, step, k, d){
 
 function checkUser(){
   var u = document.getElementById('username').value;
-  document.getElementById('response').innerHTML = "hu" + u;
+  document.getElementById('response').innerHTML = "username " + u + "is available";
+  document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
+  document.getElementById('begin').innerHTML = "Listening..."
   document.getElementById('button').style.display = 'block';
 }
 
 
 function listen(){
+
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
     if (ar.length == 0){
@@ -82,7 +85,7 @@ function listen(){
         t_pause = t_down - t_up;
         step_d = step_d + 2;
         ar.push([t_pause])
-        sendData("philip", step_d, '', t_pause);
+ //       sendData("philip", step_d, '', t_pause);
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
@@ -102,11 +105,11 @@ function listen(){
           step_u = step_u + 2;
           c_up = 0;
         c_down = 0;
-        document.getElementById('test1').innerHTML = ar;
-        sendData("philip", step_u, key1.join(""), t_up - t_down);
+        document.getElementById('passkey').innerHTML = ar;
+ //       sendData("philip", step_u, key1.join(""), t_up - t_down);
        }
       else{
-        document.getElementById('test1').innerHTML = "DONZOO";
+        document.getElementById('passkey').innerHTML = "DONZOO";
       }
       }
     });
