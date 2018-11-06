@@ -63,7 +63,7 @@ function hide(){
 
 function checkUser(){
   var u = document.getElementById('username').value;
-  document.getElementById('response').innerHTML = "its neeeewww" + u;
+  document.getElementById('response').innerHTML = "huhu" + u;
   document.getElementById('button').style.display = 'none';
 }
 
