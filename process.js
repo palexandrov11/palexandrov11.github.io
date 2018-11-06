@@ -64,7 +64,7 @@ function hide(){
 function checkUser(){
   var u = document.getElementById('username').value;
   document.getElementById('response').innerHTML = "its new" + u;
-  document.getElementById('button').style.display = 'block';
+  document.getElementById('button').style.display = 'none';
 }
 
 
