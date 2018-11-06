@@ -67,12 +67,12 @@ function checkUser(){
   var u = document.getElementById('username').value;
   sendData(u, 0, 0, 0);
   alert(typeof(r));
-  if (toString(r) === "0"){
+  if (toString(r) === toString(0)){
     document.getElementById('response1').innerHTML = "username " + u + " is available";
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
     document.getElementById('button').style.display = 'block';
   } else{
-    document.getElementById('response1').innerHTML = "username " + u + " is taken";
+    document.getElementById('response1').innerHTML = "usernameUsername " + u + " is taken";
   }
 }
 
