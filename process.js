@@ -41,14 +41,19 @@ function sendData(user, step, k, d){
       cli.send(null);
   }
 
-window.addEventListener("click", event => {
+
+
+/*window.addEventListener("click", event => {
   var u = document.getElementById('username').value;
   if(u.length != 0){
     var r = sendData(u, 0, 0, 0);
-    
     document.getElementById('test1').innerHTML = "username" + u;
   }  
-});
+});*/
+function checkUser(){
+  var u = document.getElementById('username').value;
+  document.getElementById('response').innerHTML = u;
+}
 
 
 function listen(){
