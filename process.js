@@ -48,16 +48,15 @@ function sendData(user, step, k, d){
 
 
 function checkUser(){
-  var x = document.getElementById('username').value;
-  alert(x);
+  document.getElementById('username').innerHTML = "";
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0);
   if (toString(r) === toString(0)){
-    document.getElementById('response').innerHTML = "Username " + user + " is available";
+    document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } else{
-    document.getElementById('response').innerHTML = "Username " + user + " is taken";
+    document.getElementById('response').innerHTML = "username " + user + " is taken";
 
   }
 }
