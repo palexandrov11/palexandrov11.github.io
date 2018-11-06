@@ -50,9 +50,17 @@ function sendData(user, step, k, d){
     document.getElementById('test1').innerHTML = "username" + u;
   }  
 });*/
+
+window.onload() = function(){
+  document.getElementById("button").style.display = 'none';
+}
+
+
+
 function checkUser(){
   var u = document.getElementById('username').value;
   document.getElementById('response').innerHTML = u;
+
 }
 
 
