@@ -66,9 +66,13 @@ function sendData(user, step, k, d){
 function checkUser(){
   var u = document.getElementById('username').value;
   sendData(u, 0, 0, 0);
-  document.getElementById('response1').innerHTML = "wwwwww" + r;
-  document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
-  document.getElementById('button').style.display = 'block';
+  if (r == 0){
+    document.getElementById('response1').innerHTML = "username " + u + " is available";
+    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
+    document.getElementById('button').style.display = 'block';
+  } else{
+    document.getElementById('response1').innerHTML = "username " + u + " is taken";
+  }
 }
 
 
