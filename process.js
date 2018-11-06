@@ -8,6 +8,7 @@ var ar = [];
 var ar1 = {};
 var step_d = 0;
 var step_u = -1;
+var r = "";
 
 function sendData(user, step, k, d){
       var cli = new XMLHttpRequest();
@@ -16,7 +17,7 @@ function sendData(user, step, k, d){
                   if (cli.status === 200) {
                           alert(cli.responseText);
                           document.getElementById('response').innerHTML = cli.responseText;
-                          check();
+                          r = cli.responseText;
 
                              // OK
                          /*    var parser = new DOMParser();
@@ -65,13 +66,11 @@ function sendData(user, step, k, d){
 function checkUser(){
   var u = document.getElementById('username').value;
   sendData(u, 0, 0, 0);
-}
-
-function check(){
-  document.getElementById('response1').innerHTML = "heeee" + document.getElementById('response').value;
+  document.getElementById('response1').innerHTML = "wwwwww" + r;
   document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds)";
   document.getElementById('button').style.display = 'block';
 }
+
 
 
 function listen(){
