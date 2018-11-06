@@ -55,16 +55,16 @@ function sendData(user, step, k, d){
   document.getElementById("button").style.display = 'none';
 }*/
 
-function hide(){
+/*function hide(){
   document.getElementById('button').style.display = 'none';
-}
+}*/
 
 
 
 function checkUser(){
   var u = document.getElementById('username').value;
-  document.getElementById('response').innerHTML = "huhu" + u;
-  document.getElementById('button').style.display = 'none';
+  document.getElementById('response').innerHTML = "hu" + u;
+  document.getElementById('button').style.display = 'block';
 }
 
 
