@@ -51,16 +51,20 @@ function sendData(user, step, k, d){
   }  
 });*/
 
-window.onload() = function(){
+/*window.onload() = function(){
   document.getElementById("button").style.display = 'none';
+}*/
+
+function hide(){
+  document.getElementById('button').style.display = 'none';
 }
 
 
 
 function checkUser(){
   var u = document.getElementById('username').value;
-  document.getElementById('response').innerHTML = u;
-  document.getElementById("button").style.display = 'block';
+  document.getElementById('response').innerHTML = "its new" + u;
+  document.getElementById('button').style.display = 'block';
 }
 
 
