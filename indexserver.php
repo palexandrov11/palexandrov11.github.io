@@ -14,50 +14,122 @@ $username = "id7448806_pa";
 $password = "55555";
 $database = "id7448806_localhost";
 
-print_r($_GET);
-if($_GET["serverData"] === "") echo "a is an empty string\n";
-if($_GET["serverData"] === false) echo "a is false\n";
-if($_GET["serverData"] === null) echo "a is null\n";
-if(isset($_GET["serverData"])) echo "a is set\n";
-if(!empty($_GET["serverData"])) echo "a is not empty";
+$user = $_GET["user"];
+$step = $_GET["step"];
+$key = $_GET["key"];
+$duration = $_GET["duration"];
+$option = $_GET["option"];
 
-if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    echo "success";
-}else{
-    echo "fail";
-}
-//echo $_POST['serverData'];
 
-if(isset($_POST['severData'])) {
-		// data from browser extension/app
-		$serverData = $_POST['serverData'];
-		echo $serverData;
-}
-// Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
+}
 
-$sql = "INSERT INTO Passwords(id, passkey) VALUES (0124, 'Hello')";
+$sql_u = "SELECT user FROM Passwords WHERE user = '$user'";
+$result1 = $conn->query($sql_u);
+$a = $result1->fetch_assoc();
+
+if ($a === NULL){
+  $sql_n = "INSERT INTO Passwords(user) Values('$user')";
+  $conn->query($sql_n);
+  echo "0";
+} else{
+  $t = "t".$step;
+  $p = "p".$step;
+  if ($option === '0'){
+    if ($key === ''){
+        $sql_t = "UPDATE Passwords SET "."$t"." = "."'$duration' WHERE user = '$user'";
+        $conn->query($sql_t);
+    }else{
+        $sql_p = "UPDATE Passwords SET "."$t"."="."'$duration',"."$p"."="."'$key' WHERE user = '$user'";
+        $conn->query($sql_p);
+    }
+  }else {
+    $sql_v = "SELECT "."$p, $t"." FROM Passwords WHERE user = '$user'";
+    $result_v = $conn->query($sql_v);
+    while ($row = $result_v->fetch_assoc()){
+      echo $row[$p] . $row[$t]; 
+    }
+  }
+}
+
+
+
+
+/*$sql = "INSERT INTO Passwords(user) VALUES ('philip')";
 
 if ($conn->query($sql) === TRUE) {
-	echo "Record updated succesfully";
+  echo "Record updated succesfully";
 } else {
-	echo "Error updating table: " . $conn->error;
-}
+  echo "Error updating table: " . $conn->error;
+}*/
 
-$sql1 = "SELECT id, passkey FROM Passwords WHERE id = 123";
+/*$a = array();
+$t0 = $_SERVER['REQUEST_TIME'];
+array_push($a, $t0);
+$b = count($a);
+echo "array".$b;*/
+
+/*if ($opt === '1'){
+    echo "yes yes";
+    $sql1 = "SELECT user FROM Passwords WHERE user = '$user'";
+    if($conn->query($sql1)){
+        echo "yes yes yes yes";
+        if(intval($t1) != 0){
+            $dt = $t1 - intval($stamp);
+            echo "FUCKYES".$dt;
+        }else{
+            $t1 = intval($stamp);
+            echo "nope".$t1;
+        }
+        }
+    }*/
+
+
+//$sql_user = "SELECT user FROM Passwords WHERE user
+
+/*else{
+    "INSERT INTO Passwords(user, passkey) VALUES ($user, 
+    echo "the user does not exist";
+    
+}*/
+
+
+
+//if $opt === ""
+//if ()
+//$sql2 = "INSERT INTO Passwords(user, passkey) VALUES ($user, "
+
+
+/*$sql1 = "SELECT id, passkey FROM Passwords WHERE id = '123'";
 $result1 = $conn->query($sql1);
-
 while ($row = $result1->fetch_assoc()) {
-	echo $row["id"] . $row["passkey"] . "<br>";
+  echo $row["id"] . $row["passkey"] . "<br>";
 }
+while ($row = $result1->fetch_assoc()) {
+  echo $row["id"] . $row["passkey"] . "<br>";
+}*/
 
 $conn->close();
+
+/*
+if($_GET["a"] === "") echo "a is an empty string\n";
+if($_GET["a"] === false) echo "a is false\n";
+if($_GET["a"] === null) echo "a is null\n";
+if(isset($_GET["a"])) echo "a is set\n";
+if(!empty($_GET["a"])) echo "a is not empty";
+$info = $_GET["a"];
+echo $info . 'yoyoyoyo';
+if($_POST["a"] === "") echo "a is an empty string\n";
+if($_POST["a"] === false) echo "a is false\n";
+if($_POST["a"] === null) echo "a is null\n";
+if(isset($_POST["a"])) echo "a is set\n";
+if(!empty($_POST["a"])) echo "a is not empty";
+$info = $_POST["a"];
+echo $info;
+*/
 
 ?>
 </body>
