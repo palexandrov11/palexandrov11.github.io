@@ -65,6 +65,7 @@ function checkUser(){
 
 function listen(){
   document.getElementById('begin').innerHTML = "Listening...";
+  var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
     if (ar.length == 0){
@@ -78,7 +79,7 @@ function listen(){
         t_pause = t_down - t_up;
         step_d = step_d + 2;
         ar.push([t_pause])
- //       sendData("philip", step_d, '', t_pause);
+        sendData(user, step_d, '', t_pause);
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
@@ -87,7 +88,7 @@ function listen(){
     });                                                                                               
     
   window.addEventListener("keyup", event => {
-      c_up = c_up + 1;
+    c_up = c_up + 1;
     key1 = Object.keys(ar1);
     if (c_up == key1.length){
       d = new Date();
@@ -99,7 +100,7 @@ function listen(){
           c_up = 0;
         c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
- //       sendData("philip", step_u, key1.join(""), t_up - t_down);
+        sendData(user, step_u, key1.join(""), t_up - t_down);
        }
       else{
         document.getElementById('passkey').innerHTML = "DONZOO";
