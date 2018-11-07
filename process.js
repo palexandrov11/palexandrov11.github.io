@@ -66,6 +66,7 @@ function checkUser(){
 function listen(){
   document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
+  document.getElementById('begin').innerHTML = user;
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
     if (ar.length == 0){
