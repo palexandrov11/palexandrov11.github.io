@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,17 +12,15 @@
   </style>
 </head>
 <body>
-<form action="register.html">
-  <input type = "submit" value = "Register">
-</form>
-<form action="login.html">
-  <input type = "submit" value = "LogIn">
-</form>
-Click on this window to focus it and then enter password.
+Enter a preferred username: 
+<input id= "username" type="text">
+<button onclick="checkUser()">Submit</button>
+<p id ="response"></p>
+<p id ="response1"></p>
+<p id ="command"></p>
+<button id = "button" onclick="listen()" style="display:none">Start</button>
+<p id ="begin"></p>
+<p id ="passkey"></p>
 <br><br><br>
-<div id="test1">keyCode1 = 0</div>
 </body>
 </html>
-
-
-

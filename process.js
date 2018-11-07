@@ -10,7 +10,7 @@ var step_d = 0;
 var step_u = -1;
 var r = "";
 
-function sendData(user, step, k, d){
+function sendData(user, step, k, d, i){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
@@ -22,7 +22,8 @@ function sendData(user, step, k, d){
               }
       };
       var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
-      'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d);
+      'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d) + 
+      '&' + 'option=' + String(i);
       cli.open('GET', url, false);
       cli.send(null);
   }
@@ -63,10 +64,9 @@ function checkUser(){
 
 
 
-function listen(){
+function listen(option=0){
   document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
-  document.getElementById('begin').innerHTML = user;
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
     if (ar.length == 0){
@@ -80,7 +80,7 @@ function listen(){
         t_pause = t_down - t_up;
         step_d = step_d + 2;
         ar.push([t_pause])
-        sendData(user, step_d, '', t_pause);
+        sendData(user, step_d, '', t_pause, option);
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
@@ -94,20 +94,24 @@ function listen(){
     if (c_up == key1.length){
       d = new Date();
           t_up = d.getTime();
-      if (t_up - t_start < 10000){
+      if (t_up - t_start < 5000){
           ar.push([key1, t_up - t_down]);
           ar1 = {};
           step_u = step_u + 2;
           c_up = 0;
         c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
-        sendData(user, step_u, key1.join(""), t_up - t_down);
+        sendData(user, step_u, key1.join(""), t_up - t_down, option);
        }
       else{
         document.getElementById('passkey').innerHTML = "DONZOO";
       }
       }
     });
+}
+
+function verify(){
+  listen(1);
 }
 
 
