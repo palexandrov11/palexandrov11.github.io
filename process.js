@@ -83,9 +83,6 @@ function listen(option=0){
         step_d = step_d + 2;
         ar.push([t_pause])
         sendData(user, step_d, '', t_pause, option);
-        if (toString(r) === toString(0)){
-          document.getElementById('begin').innerHTML = "WRONG";
-        }
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
@@ -107,6 +104,9 @@ function listen(option=0){
         c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
         sendData(user, step_u, key1.join(""), t_up - t_down, option);
+        if (toString(r) === toString(0)){
+          document.getElementById('begin').innerHTML = "WRONG";
+        }
        }
       else{
         document.getElementById('passkey').innerHTML = "DONZOO";
