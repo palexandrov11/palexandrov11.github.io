@@ -118,7 +118,8 @@ function listen(option=0){
         document.getElementById('passkey').innerHTML = "DONZOO";
       }
       }
-});
+  });
+}
 
 
 
