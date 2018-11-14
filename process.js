@@ -107,8 +107,8 @@ function listen(option=0){
         c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
         sendData(user, step_u, key1.join(""), t_up - t_down, option);
-        if (toString(r) === toString(0)){
-          document.getElementById('begin').innerHTML = toString(r);
+        if (toString(r) === toString(1)){
+          document.getElementById('begin').innerHTML = "WRONG";
         }
        }
       else{

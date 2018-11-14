@@ -70,9 +70,9 @@ if ($a === NULL){
         }
         if ($p_int === intval($key)){
            if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
-            echo "1";
-           }else{
             echo "0";
+           }else{
+            echo "1";
            }
         }
       }
