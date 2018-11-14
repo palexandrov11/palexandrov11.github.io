@@ -67,7 +67,7 @@ function checkUser(){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "Listening...";
+  document.getElementById('begin').innerHTML = "LLLListening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
@@ -114,12 +114,12 @@ function listen(option=0){
           document.getElementById('begin').innerHTML = "wtf";
         }
        }*/
-      else{
+      }else{
         document.getElementById('passkey').innerHTML = "DONZOO";
       }
       }
-  }
 });
+
 
 
 function verify(){
