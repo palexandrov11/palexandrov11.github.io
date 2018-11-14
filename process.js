@@ -67,7 +67,7 @@ function checkUser(){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "Listening...";
+  document.getElementById('begin').innerHTML = "listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
@@ -83,6 +83,9 @@ function listen(option=0){
         step_d = step_d + 2;
         ar.push([t_pause])
         sendData(user, step_d, '', t_pause, option);
+        if (toString(r) === toString(0)){
+          document.getElementById('begin').innerHTML = "WRONG";
+        }
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
