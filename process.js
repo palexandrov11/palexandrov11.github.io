@@ -9,13 +9,15 @@ var ar1 = {};
 var step_d = 0;
 var step_u = -1;
 var r = "";
+var one = "1";
+var zero = "0";
 
 function sendData(user, step, k, d, i){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          r = cli.responseText;
+                          r = toString(cli.responseText);
                           alert(r);
                   } else {
                              alert('failure!'+ cli.status);
@@ -52,8 +54,8 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0);
-  if (toString(r) === toString(0)){
-    document.getElementById('response').innerHTML = "username " + user + " is available";
+  if (r === zero){
+    document.getElementById('response').innerHTML = "Username " + user + " is available";
     document.getElementById('username').innerHTML = '';
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';

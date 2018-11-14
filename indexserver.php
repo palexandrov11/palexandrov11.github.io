@@ -20,6 +20,9 @@ $key = $_GET["key"];
 $duration = $_GET["duration"];
 $option = $_GET["option"];
 
+$p_int = '';
+$t_int = '';
+
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -47,11 +50,30 @@ if ($a === NULL){
         $conn->query($sql_p);
     }
   }else {
-    $sql_v = "SELECT "."$p, $t"." FROM Passwords WHERE user = '$user'";
-    $result_v = $conn->query($sql_v);
-    while ($row = $result_v->fetch_assoc()){
-      echo $row[$p] . $row[$t]; 
-    }
+    if ($key === ''){
+        $sql_v = "SELECT "."$t"." FROM Passwords WHERE user = '$user'";
+        $result_v = $conn->query($sql_v);
+        while ($row = $result_v->fetch_assoc()){
+          $t_int = intval($row[$t]);
+        }
+        if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
+          echo "pause duration is valid";
+        }
+    } else{
+        $sql_v = "SELECT "."$p, $t"." FROM Passwords WHERE user = '$user'";
+        $result_v = $conn->query($sql_v);
+        while ($row = $result_v->fetch_assoc()){
+           $p_int = intval($row[$p]);
+           $t_int = intval($row[$t]);
+        }
+        if ($p_int === intval($key)){
+           if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
+            echo "key and duration are valid";
+           }else{
+            echo "key is valid, duration is not";
+           }
+        }
+      }
   }
 }
 
