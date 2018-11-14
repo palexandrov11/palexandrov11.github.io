@@ -83,6 +83,9 @@ function listen(option=0){
         step_d = step_d + 2;
         ar.push([t_pause])
         sendData(user, step_d, '', t_pause, option);
+        if (toString(r) === toString(0)){
+          document.getElementById('begin').innerHTML = "WRONG";
+        }
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
