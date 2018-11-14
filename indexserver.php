@@ -57,7 +57,9 @@ if ($a === NULL){
           $t_int = intval($row[$t]);
         }
         if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
-          echo "pause duration is valid";
+          echo "1";
+        }else{
+          echo "0";
         }
     } else{
         $sql_v = "SELECT "."$p, $t"." FROM Passwords WHERE user = '$user'";
@@ -68,9 +70,9 @@ if ($a === NULL){
         }
         if ($p_int === intval($key)){
            if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
-            echo "key and duration are valid";
+            echo "1";
            }else{
-            echo "key is valid, duration is not";
+            echo "0";
            }
         }
       }

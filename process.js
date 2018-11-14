@@ -84,7 +84,7 @@ function listen(option=0){
         ar.push([t_pause])
         sendData(user, step_d, '', t_pause, option);
         if (toString(r) === toString(0)){
-          document.getElementById('begin').innerHTML = "WRONG";
+          document.getElementById('begin').innerHTML = "WRONG111111";
         }
       }
     }
