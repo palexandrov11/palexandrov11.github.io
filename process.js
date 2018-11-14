@@ -16,7 +16,7 @@ function sendData(user, step, k, d, i){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          r = r + cli.responseText;
+                          r = cli.responseText;
                           alert(r);
                   } else {
                              alert('failure!'+ cli.status);
@@ -53,7 +53,7 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2);
-  document.getElementById('response').innerHTML = toString(r);
+  document.getElementById('response').innerHTML = r;
  if (toString(r) === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
