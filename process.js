@@ -111,7 +111,7 @@ function listen(option=0){
           document.getElementById('begin').innerHTML = "Correct";
         }
         if (toString(r) === toString(1)){
-          document.getElementById('begin').innerHTML = "WRONG";
+          document.getElementById('begin').innerHTML = "wtf";
         }
        }
       else{
