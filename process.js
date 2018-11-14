@@ -53,13 +53,13 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0);
-  if (toString(r) === zero){
+  if (toString(r) === toString(0)){
     document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } else{
-    document.getElementById('response').innerHTML = "username " + user + " is taken";
+    document.getElementById('response').innerHTML = "Username " + user + " is taken";
     document.getElementById('username').innerHTML = '';
   }
 }
