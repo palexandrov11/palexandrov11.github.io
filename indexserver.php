@@ -73,12 +73,13 @@ if ($option != "2"){
           }
         }
     }
-  }
 } else{
   if ($a === NULL){
     $sql_n = "INSERT INTO Passwords(user) Values('$user')";
     $conn->query($sql_n);
     echo "0";
+  }else{
+    echo "1";
   }
 }
 

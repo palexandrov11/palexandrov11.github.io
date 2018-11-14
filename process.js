@@ -17,7 +17,7 @@ function sendData(user, step, k, d, i){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                           r = cli.responseText;
-                          alert(r);
+                          alert(toString(r));
                   } else {
                              alert('failure!'+ cli.status);
                   }
