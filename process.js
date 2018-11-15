@@ -68,7 +68,7 @@ function checkUser(){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "LLLListening...";
+  document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
       c_down = c_down + 1;
@@ -84,7 +84,7 @@ function listen(option=0){
         step_d = step_d + 2;
         ar.push([t_pause])
         sendData(user, step_d, '', t_pause, option);
-        if (toString(r) === toString(0)){
+        if (r === toString(0)){
           document.getElementById('begin').innerHTML = "WRONG111111";
         }
       }
@@ -108,13 +108,11 @@ function listen(option=0){
         c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
         sendData(user, step_u, key1.join(""), t_up - t_down, option);
-        if (toString(r) === toString(0)){
+        if (r === toString(0)){
           document.getElementById('begin').innerHTML = "Correct";
+        }else{
+          document.getElementById('begin').innerHTML = "wrong";
         }
-    /*    if (toString(r) === toString(1)){
-          document.getElementById('begin').innerHTML = "wtf";
-        }
-       }*/
       }else{
         document.getElementById('passkey').innerHTML = "DONZOO";
       }
