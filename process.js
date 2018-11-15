@@ -54,7 +54,7 @@ function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2);
   document.getElementById('response').innerHTML = r;
- if (toString(r) === toString(0)){
+ if (r === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
