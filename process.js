@@ -18,7 +18,7 @@ function sendData(user, step, k, d, i, f){
                           rr = cli.responseText;
                           document.getElementById('response').innerHTML = rr;
                           alert(rr);
-                          if (rr === toString(1)){
+                          if (rr == ''){
                             alert("YESS");
                           }
                           if (f === "checkVal"){
