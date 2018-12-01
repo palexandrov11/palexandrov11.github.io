@@ -8,6 +8,7 @@ var ar = [];
 var ar1 = {};
 var step_d = 0;
 var step_u = -1;
+var r = "fuck";
 
 function sendData(user, step, k, d, i){
       var cli = new XMLHttpRequest();
@@ -58,7 +59,7 @@ function checkUser(){
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } else{
-    document.getElementById('response').innerHTML = "username " + user + " is taken" + toString(r);
+    document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
     document.getElementById('username').innerHTML = '';
   }
 }
@@ -103,7 +104,7 @@ function listen(option=0){
           ar1 = {};
           step_u = step_u + 2;
           c_up = 0;
-        c_down = 0;
+          c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
         sendData(user, step_u, key1.join(""), t_up - t_down, option);
         if (r === toString(0)){
@@ -114,7 +115,7 @@ function listen(option=0){
       }else{
         document.getElementById('passkey').innerHTML = "DONZOO";
       }
-      }
+    }
   });
 }
 
