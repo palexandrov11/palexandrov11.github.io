@@ -8,7 +8,7 @@ var ar = [];
 var ar1 = {};
 var step_d = 0;
 var step_u = -1;
-var r = "fuck";
+var r = "";
 
 function sendData(user, step, k, d, i){
       var cli = new XMLHttpRequest();
@@ -58,8 +58,9 @@ function checkUser(){
     document.getElementById('username').innerHTML = '';
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
-  } else{
-    document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
+  } 
+ if (r === toString(1)){
+    document.getElementById('response').innerHTML = "username " + user + " is taaaaken" + toString(r);
     document.getElementById('username').innerHTML = '';
   }
 }
