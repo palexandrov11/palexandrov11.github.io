@@ -15,8 +15,8 @@ function sendData(user, step, k, d, i){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          document.getElementById('response').innerHTML = "HHHello" + cli.responseText;
                           r = cli.responseText;
+                          document.getElementById('response').innerHTML = "Hello" + r;
                           alert(r);
                   } else {
                              alert('failure!'+ cli.status);
