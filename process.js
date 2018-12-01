@@ -54,7 +54,6 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   var rval = sendData(user, 0, 0, 0, 2);
-  document.getElementById('response').innerHTML = "this is" + rval;
 }
 
 
