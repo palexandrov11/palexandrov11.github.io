@@ -59,8 +59,8 @@ function checkUser(){
 }
 
 function checkVal(i){
-  alert(String(i));
-  alert(i);
+  r = String(i);
+  alert(r);
   /*alert(i == 1);
   alert(i === 1);
   alert(r == 1);
