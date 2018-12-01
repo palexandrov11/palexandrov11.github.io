@@ -59,14 +59,8 @@ function checkUser(){
 }
 
 function checkVal(i){
-  alert(typeof i);
+  alert(String(i));
   alert(i);
-  var x = i.valueOf();
-  alert(x);
-  alert(typeof x);
-
- 
-
   /*alert(i == 1);
   alert(i === 1);
   alert(r == 1);
