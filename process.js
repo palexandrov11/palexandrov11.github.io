@@ -15,9 +15,10 @@ function sendData(user, step, k, d, i){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          r = cli.responseText;
-                          document.getElementById('response').innerHTML = r;
-                          alert(r);
+                          rr = cli.responseText;
+                          document.getElementById('response').innerHTML = rr;
+                          alert(rr);
+                          return rr;
                   } else {
                              alert('failure!'+ cli.status);
                   }
@@ -52,10 +53,11 @@ function sendData(user, step, k, d, i){
 
 function checkUser(){
   var user = document.getElementById('username').value;
-  sendData(user, 0, 0, 0, 2);
-  var rval = document.getElementById('response').value;
-  document.getElementById('response').innerHTML = "this is it" + rval;
+  var rval = sendData(user, 0, 0, 0, 2);
+  document.getElementById('response').innerHTML = "this is" + rval;
 }
+
+
 /* if (toString(rval) === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
