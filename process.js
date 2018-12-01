@@ -60,11 +60,13 @@ function checkUser(){
 
 function checkVal(i){
   r = String(i);
-  var rval = document.getElementById('response').value;
-  //alert(typeof r)
-  if (String(r) === "1"){
+  alert(i === "1");
+  alert(i == 1);
+  alert(r == 1);
+  alert(r === "1");
+ /* if (String(r) == 1){
     document.getElementById('command').innerHTML = "it works";
-  }
+  }*/
 }
 
 
