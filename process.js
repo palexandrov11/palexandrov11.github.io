@@ -111,8 +111,9 @@ function listen(option=0){
         sendData(user, step_u, key1.join(""), t_up - t_down, option);
         if (r === toString(0)){
           document.getElementById('begin').innerHTML = "Correct";
-        }else{
-          document.getElementById('begin').innerHTML = "wrong";
+        }
+        if (r === toString(1)){
+          document.getElementById('begin').innerHTML = "Wrong";
         }
       }else{
         document.getElementById('passkey').innerHTML = "DONZOO";
