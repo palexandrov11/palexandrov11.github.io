@@ -62,7 +62,11 @@ function checkVal(i){
   r = String(i);
   alert(i === "1");
   alert(i == 1);
+  alert(i === 1);
   alert(r == 1);
+  alert(r == "1");
+  alert(i === toString(1));
+  alert(i == toString(1));
   alert(r === "1");
  /* if (String(r) == 1){
     document.getElementById('command').innerHTML = "it works";
