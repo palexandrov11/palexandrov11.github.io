@@ -59,14 +59,14 @@ function checkUser(){
 }
 
 function checkVal(i){
-  alert(typeof i);
   r = String(i);
   var w = parseInt(r);
   var z = parseInt(i);
-  alert(z == 1);
-  alert(w == 1);
-  alert(z === 1);
-  alert(w === 1);
+  alert(typeof w);
+  alert(typeof z);
+  alert(w + w);
+  alert(z + z);
+
  
 
   /*alert(i == 1);
