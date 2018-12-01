@@ -61,8 +61,8 @@ function checkUser(){
 function checkVal(i){
   r = i;
   var rval = document.getElementById('response').value;
-  alert(rval);
-  if (String(r) === String(1)){
+  //(rval);
+  if (String(r) === toString(1)){
     document.getElementById('command').innerHTML = "it works";
   }
 }
