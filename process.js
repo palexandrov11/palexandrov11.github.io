@@ -55,7 +55,7 @@ function checkUser(){
   sendData(user, 0, 0, 0, 2);
   var rval = document.getElementById('response').value;
   document.getElementById('username').innerHTML = "this is it" + rval;
-
+}
 /* if (toString(rval) === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
