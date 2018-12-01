@@ -59,9 +59,8 @@ function checkUser(){
 }
 
 function checkVal(i){
-  r = String(i);
-  alert(r);
-  /*alert(i == 1);
+  document.getElementById('command').innerHTML = "this is" + i;
+    /*alert(i == 1);
   alert(i === 1);
   alert(r == 1);
   alert(r == "1");
