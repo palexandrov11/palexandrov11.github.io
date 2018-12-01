@@ -15,12 +15,9 @@ function sendData(user, step, k, d, i, f){
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          rr = cli.responseText;
+                          var rr = JSON.parse(cli.responseText);
                           document.getElementById('response').innerHTML = rr;
                           alert(rr);
-                          if (rr == ''){
-                            alert("YESS");
-                          }
                           if (f === "checkVal"){
                             checkVal(rr);
                           }
@@ -62,7 +59,7 @@ function checkUser(){
 }
 
 function checkVal(i){
-  document.getElementById('command').innerHTML = "this " + i;
+  document.getElementById('command').innerHTML = "this is " + i;
   r = document.getElementById('command').value;
   alert(String(r));
   
