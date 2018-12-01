@@ -52,6 +52,7 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2);
+  alert(r);
  // document.getElementById('response').innerHTML = r;
  if (r === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
@@ -60,7 +61,7 @@ function checkUser(){
     document.getElementById('button').style.display = 'block';
   } 
  if (r === toString(1)){
-    document.getElementById('response').innerHTML = "username " + user + " is taaaaken" + toString(r);
+    document.getElementById('response').innerHTML = "username " + user + " is taaken" + toString(r);
     document.getElementById('username').innerHTML = '';
   }
 }
