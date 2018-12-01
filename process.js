@@ -59,9 +59,10 @@ function checkUser(){
 }
 
 function checkVal(i){
-  r = i;
+  r = String(i);
   var rval = document.getElementById('response').value;
-  if (String(r) == "1"){
+  alert(typeof r)
+  if (String(r) == '1'){
     document.getElementById('command').innerHTML = "it works";
   }
 }
