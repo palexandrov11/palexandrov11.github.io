@@ -59,13 +59,10 @@ function checkUser(){
 }
 
 function checkVal(i){
-  r = String(i);
-  var w = parseInt(r);
-  var z = parseInt(i);
-  alert(typeof w);
-  alert(typeof z);
-  alert(w + w);
-  alert(z + z);
+  alert(typeof i);
+  var x = i.valueOf();
+  alert(x);
+  alert(typeof x);
 
  
 
