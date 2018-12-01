@@ -8,8 +8,6 @@ var ar = [];
 var ar1 = {};
 var step_d = 0;
 var step_u = -1;
-var r = "fuck";
-var zero = "0";
 
 function sendData(user, step, k, d, i){
       var cli = new XMLHttpRequest();
@@ -53,7 +51,7 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2);
-  document.getElementById('response').innerHTML = r;
+ // document.getElementById('response').innerHTML = r;
  if (r === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';

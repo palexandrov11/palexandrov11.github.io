@@ -53,9 +53,9 @@ if ($option != "2"){
             $t_int = intval($row[$t]);
           }
           if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
-            echo "1";
-          }else{
             echo "0";
+          }else{
+            echo "1";
           }
       } else{
           $sql_v = "SELECT "."$p, $t"." FROM Passwords WHERE user = '$user'";
