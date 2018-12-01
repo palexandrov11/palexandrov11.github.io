@@ -10,7 +10,7 @@ var step_d = 0;
 var step_u = -1;
 var r = "";
 
-function sendData(user, step, k, d, i){
+function sendData(user, step, k, d, i, f){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
@@ -18,6 +18,7 @@ function sendData(user, step, k, d, i){
                           rr = cli.responseText;
                           document.getElementById('response').innerHTML = rr;
                           alert(rr);
+                          if (f === "checkVal");
                           checkVal(rr);
                   } else {
                              alert('failure!'+ cli.status);
@@ -53,14 +54,14 @@ function sendData(user, step, k, d, i){
 
 function checkUser(){
   var user = document.getElementById('username').value;
-  sendData(user, 0, 0, 0, 2);
+  sendData(user, 0, 0, 0, 2, "checkVal");
 }
 
 function checkVal(i){
   r = i;
   var rval = document.getElementById('response').value;
   alert(rval);
-  document.getElementById('command').innerHTML = i + " this IS the " + r;
+  document.getElementById('command').innerHTML = i + " this isss the " + r;
 }
 
 
