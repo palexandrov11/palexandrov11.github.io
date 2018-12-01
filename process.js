@@ -16,7 +16,7 @@ function sendData(user, step, k, d, i){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                           r = cli.responseText;
-                          document.getElementById('response').innerHTML = "Hello" + r;
+                          document.getElementById('response').innerHTML = r;
                           alert(r);
                   } else {
                              alert('failure!'+ cli.status);
@@ -52,14 +52,15 @@ function sendData(user, step, k, d, i){
 
 function checkUser(){
   var user = document.getElementById('username').value;
+  var rval = document.getElementById('response').value;
   sendData(user, 0, 0, 0, 2);
- if (r === toString(0)){
+ if (rval === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } 
- if (r === toString(1)){
+ if (rval === toString(1)){
     document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
     document.getElementById('username').innerHTML = '';
   }
