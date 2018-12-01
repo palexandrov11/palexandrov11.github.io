@@ -52,15 +52,15 @@ function sendData(user, step, k, d, i){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2);
-  alert(r);
-  document.getElementById('response').innerHTML = r;
- if (r === toString(0)){
+  alert(String(r));
+  document.getElementById('response').innerHTML = "hello";
+ if (r === String(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   } 
- if (r === toString(1)){
+ if (r === String(1)){
     document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
     document.getElementById('username').innerHTML = '';
   }
@@ -109,10 +109,10 @@ function listen(option=0){
           c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
         sendData(user, step_u, key1.join(""), t_up - t_down, option);
-        if (r === toString(0)){
+        if (r === String(0)){
           document.getElementById('begin').innerHTML = "Correct";
         }
-        if (r === toString(1)){
+        if (r === String(1)){
           document.getElementById('begin').innerHTML = "Wrong";
         }
       }else{
