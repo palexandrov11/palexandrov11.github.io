@@ -60,6 +60,7 @@ function checkUser(){
 
 function checkVal(i){
   alert(typeof i);
+  alert(i);
   var x = i.valueOf();
   alert(x);
   alert(typeof x);
