@@ -53,7 +53,7 @@ function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2);
   alert(r);
- // document.getElementById('response').innerHTML = r;
+  document.getElementById('response').innerHTML = r;
  if (r === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('username').innerHTML = '';
@@ -61,7 +61,7 @@ function checkUser(){
     document.getElementById('button').style.display = 'block';
   } 
  if (r === toString(1)){
-    document.getElementById('response').innerHTML = "username " + user + " is taaken" + toString(r);
+    document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
     document.getElementById('username').innerHTML = '';
   }
 }
