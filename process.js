@@ -18,8 +18,9 @@ function sendData(user, step, k, d, i, f){
                           rr = cli.responseText;
                           document.getElementById('response').innerHTML = rr;
                           alert(rr);
-                          if (f === "checkVal");
-                          checkVal(rr);
+                          if (f === "checkVal"){
+                            checkVal(rr);
+                          }
                   } else {
                              alert('failure!'+ cli.status);
                   }
@@ -61,7 +62,7 @@ function checkVal(i){
   r = i;
   var rval = document.getElementById('response').value;
   alert(rval);
-  document.getElementById('command').innerHTML = i + " this isss the " + r;
+  document.getElementById('command').innerHTML = i + " this is the " + r;
 }
 
 
