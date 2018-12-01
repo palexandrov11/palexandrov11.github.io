@@ -52,8 +52,8 @@ function sendData(user, step, k, d, i){
 
 function checkUser(){
   var user = document.getElementById('username').value;
-  var rval = document.getElementById('response').value;
   sendData(user, 0, 0, 0, 2);
+  var rval = document.getElementById('response').value;
   document.getElementById('username').innerHTML = "this is it" + rval;
  if (toString(rval) === toString(0)){
    // document.getElementById('response').innerHTML = "username " + user + " is available";
