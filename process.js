@@ -59,15 +59,23 @@ function checkUser(){
 }
 
 function checkVal(i){
+  alert(typeof i);
   r = String(i);
-  alert(i === "1");
-  alert(i == 1);
+  var w = parseInt(r);
+  var z = parseInt(i);
+  alert(z == 1);
+  alert(w == 1);
+  alert(z === 1);
+  alert(w === 1);
+ 
+
+  /*alert(i == 1);
   alert(i === 1);
   alert(r == 1);
   alert(r == "1");
   alert(i === toString(1));
   alert(i == toString(1));
-  alert(r === "1");
+  alert(r === "1");*/
  /* if (String(r) == 1){
     document.getElementById('command').innerHTML = "it works";
   }*/
