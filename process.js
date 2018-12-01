@@ -18,7 +18,7 @@ function sendData(user, step, k, d, i){
                           rr = cli.responseText;
                           document.getElementById('response').innerHTML = rr;
                           alert(rr);
-                          return rr;
+                          checkVal(rr);
                   } else {
                              alert('failure!'+ cli.status);
                   }
@@ -53,7 +53,13 @@ function sendData(user, step, k, d, i){
 
 function checkUser(){
   var user = document.getElementById('username').value;
-  var rval = sendData(user, 0, 0, 0, 2);
+  sendData(user, 0, 0, 0, 2);
+}
+
+function checkVal(i){
+  var rval = document.getElementById('response').value;
+  alert(rval);
+  document.getElementById('command').innerHTML = i + " this is the " + rval;
 }
 
 
