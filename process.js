@@ -62,7 +62,7 @@ function checkVal(i){
   r = i;
   var rval = document.getElementById('response').value;
   alert(rval);
-  document.getElementById('command').innerHTML = i + " this IS the " + toString(r);
+  document.getElementById('command').innerHTML = i + " this is the " + String(r);
 }
 
 
