@@ -61,7 +61,13 @@ function checkUser(){
 function checkVal(i){
   document.getElementById('command').innerHTML = "this is " + i;
   r = document.getElementById('command').innerHTML;
-  alert(i === "1");
+  alert(i === toString(1));
+  alert(i == 1);
+  alert(toString(i) == "1");
+  alert(toString(i) === toString(1));
+  alert(i == r);
+  alert(i === r);
+  
   
     /*alert(i == 1);
   alert(i === 1);
