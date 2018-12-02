@@ -112,7 +112,7 @@ function checkVal(i){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "Listening...";
+  document.getElementById('begin').innerHTML = "listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
@@ -126,8 +126,8 @@ function listen(option=0){
       if (ar.length != 0){
         t_pause = t_down - t_up;
         step_d = step_d + 2;
-        ar.push([t_pause])
-        if (t_up - t_start < 5000){
+        ar.push([t_pause]);
+        if (t_down - t_start < 5000){
           sendData(user, step_d, '', t_pause, option, "countVal");
         } else {
           if (option == 0){
