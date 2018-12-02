@@ -69,7 +69,7 @@ function checkUser(){
 function checkVal(i){
   var user = document.getElementById('username').value;
   if(i == 1){
-    document.getElementById('response').innerHTML = "username " + user + " is  not available";
+    document.getElementById('response').innerHTML = "Username " + user + " is  not available";
   } else {
     document.getElementById('response').innerHTML = "username " + user + " is available";
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
@@ -79,6 +79,8 @@ function checkVal(i){
   function verifyVal(i){
     if (i == 1){
       document.getElementById('passkey').innerHTML = "Password is correct";
+    } else {
+      document.getElementById('passkey').innerHTML = "Password is incorrect correct";
     }
   }
   
@@ -113,7 +115,7 @@ function listen(option=0){
   document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
-      c_down = c_down + 1;
+    c_down = c_down + 1;
     if (ar.length == 0){
       d = new Date();
       t_start = d.getTime();
@@ -125,7 +127,16 @@ function listen(option=0){
         t_pause = t_down - t_up;
         step_d = step_d + 2;
         ar.push([t_pause])
-        sendData(user, step_d, '', t_pause, option, "countVal");
+        if (t_up - t_start < 5000){
+          sendData(user, step_d, '', t_pause, option, "countVal");
+        } else {
+          if (option == 0){
+            sendData(user, 20, '', points, option, '');
+            document.getElementById('passkey').innerHTML = "DONE!";
+          } else{
+            sendData(user, 20, '', points, option, "verifyVal");
+          }
+        }
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
