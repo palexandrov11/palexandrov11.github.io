@@ -16,7 +16,7 @@ function sendData(user, step, k, d, i, f){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                           var r = cli.responseText;
-                          alert(r);
+                        //  alert(r);
  //                         document.getElementById('response').innerHTML = rr;
                      //     alert(rr);
  //                         if (f === "checkVal"){
@@ -57,6 +57,8 @@ function sendData(user, step, k, d, i, f){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2, "checkVal");
+  alert("yes");
+  alert(r);
   if(r == 1){
     document.getElementById('command').innerHTML = "username is taken";
   }
