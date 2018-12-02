@@ -21,14 +21,14 @@ function sendData(user, step, k, d, i, f){
                             checkVal(response);
                           } 
                           if (f === "countVal"){
-                            alert(response);
+                //            alert(response);
                             if (response == 1){
-                              alert("counted");
+                 //             alert("counted");
                               points = points + 1;
                             }
                           }
                           if (f === "verifyVal"){
-                            alert(response + "here");
+                    //        alert(response + "here");
                             verifyVal(response);
                           }
                   } else {
@@ -80,8 +80,8 @@ function checkVal(i){
 }
 
   function verifyVal(i){
-    alert("why no work" + i);
-    alert(i == 1);
+  //  alert("why no work" + i);
+  //  alert(i == 1);
     if (i == 1){
       document.getElementById('passkey').innerHTML = "Password is correct";
       document.getElementById('begin').innerHTML = "Password is correct";
@@ -141,7 +141,7 @@ function listen(option=0){
             sendData(user, 20, '', points, option, '');
             document.getElementById('passkey').innerHTML = "DONE!";
           } else{
-            alert("sent");
+  //          alert("sent");
             sendData(user, 20, '', points, option, "verifyVal");
           }
         }
@@ -171,7 +171,7 @@ function listen(option=0){
           sendData(user, 20, '', points, option, '');
           document.getElementById('passkey').innerHTML = "DONE!";
         } else{
-          alert("yes");
+ //         alert("yes");
           sendData(user, 20, '', points, option, "verifyVal");
         }
       }
