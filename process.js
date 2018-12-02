@@ -150,6 +150,7 @@ function listen(option=0){
       }else{
         if (option == 0){
           sendData(user, 20, '', points, option, '');
+          document.getElementById('passkey').innerHTML = "DONE!";
         } else{
           sendData(user, 20, '', points, option, "verifyVal");
         }
