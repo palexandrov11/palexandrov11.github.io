@@ -28,6 +28,7 @@ function sendData(user, step, k, d, i, f){
                             }
                           }
                           if (f === "verifyVal"){
+                            alert(response + "here");
                             verifyVal(response);
                           }
                   } else {
@@ -135,6 +136,7 @@ function listen(option=0){
             sendData(user, 20, '', points, option, '');
             document.getElementById('passkey').innerHTML = "DONE!";
           } else{
+            alert("sent");
             sendData(user, 20, '', points, option, "verifyVal");
           }
         }
@@ -164,6 +166,7 @@ function listen(option=0){
           sendData(user, 20, '', points, option, '');
           document.getElementById('passkey').innerHTML = "DONE!";
         } else{
+          alert("yes");
           sendData(user, 20, '', points, option, "verifyVal");
         }
       }
