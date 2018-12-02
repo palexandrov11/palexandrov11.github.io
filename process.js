@@ -81,8 +81,10 @@ function checkVal(i){
   function verifyVal(i){
     if (i == 1){
       document.getElementById('passkey').innerHTML = "Password is correct";
+      document.getElementById('begin').innerHTML = "Password is correct";
     } else {
       document.getElementById('passkey').innerHTML = "Password is incorrect correct";
+      document.getElementById('begin').innerHTML = "Password is incorrect correct";
     }
   }
   
@@ -114,7 +116,7 @@ function checkVal(i){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "Listening...";
+  document.getElementById('begin').innerHTML = "listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
