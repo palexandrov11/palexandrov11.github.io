@@ -101,7 +101,7 @@ function checkVal(i){
  /* if (String(r) == 1){
     document.getElementById('command').innerHTML = "it works";
   }*/
-}
+
 
 
 /* if (toString(rval) === toString(0)){
@@ -119,7 +119,7 @@ function checkVal(i){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "listening...";
+  document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
