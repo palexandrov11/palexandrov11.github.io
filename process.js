@@ -77,6 +77,7 @@ function checkVal(i){
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   }
+}
 
   function verifyVal(i){
     alert("why no work" + i);
@@ -118,7 +119,7 @@ function checkVal(i){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "Listening...";
+  document.getElementById('begin').innerHTML = "listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
