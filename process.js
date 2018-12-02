@@ -21,6 +21,7 @@ function sendData(user, step, k, d, i, f){
                             checkVal(response);
                           } 
                           if (f === "countVal"){
+                            alert(response);
                             if (response == 1){
                               alert("counted");
                               points = points + 1;
@@ -112,7 +113,7 @@ function checkVal(i){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "listening...";
+  document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
