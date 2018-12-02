@@ -61,7 +61,7 @@ function checkUser(){
 function checkVal(i){
   document.getElementById('command').innerHTML = "this is " + i;
   r = document.getElementById('command').innerHTML;
-  alert(r);
+  alert(i === "1");
   
     /*alert(i == 1);
   alert(i === 1);
