@@ -79,6 +79,8 @@ function checkVal(i){
   }
 
   function verifyVal(i){
+    alert("why no work" + i);
+    alert(i == 1);
     if (i == 1){
       document.getElementById('passkey').innerHTML = "Password is correct";
       document.getElementById('begin').innerHTML = "Password is correct";
@@ -116,7 +118,7 @@ function checkVal(i){
 
 
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "listening...";
+  document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
