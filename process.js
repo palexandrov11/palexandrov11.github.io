@@ -17,7 +17,7 @@ function sendData(user, step, k, d, i, f){
                   if (cli.status === 200) {
                           var rr = cli.responseText;
                           document.getElementById('response').innerHTML = rr;
-                          alert(rr);
+                     //     alert(rr);
                           if (f === "checkVal"){
                             checkVal(rr);
                           }
@@ -59,8 +59,8 @@ function checkUser(){
 }
 
 function checkVal(i){
-  document.getElementById('command').innerHTML = "this is ";
-  r = document.getElementById('command').value;
+  document.getElementById('command').innerHTML = "this is " + i;
+  r = document.getElementById('command').innerHTML;
   alert(r);
   
     /*alert(i == 1);
