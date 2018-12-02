@@ -9,19 +9,26 @@ var ar1 = {};
 var step_d = 0;
 var step_u = -1;
 var r = "";
+var points = 0;
 
 function sendData(user, step, k, d, i, f){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
-                          var r = cli.responseText;
-                        //  alert(r);
- //                         document.getElementById('response').innerHTML = rr;
-                     //     alert(rr);
- //                         if (f === "checkVal"){
-   //                         checkVal(rr);
-     //                     }
+                          var response = cli.responseText;
+                          if (f === "checkVal"){
+                            checkVal(response);
+                          } 
+                          if (f === "countVal"){
+                            if (response == 1){
+                              alert("counted");
+                              points = points + 1;
+                            }
+                          }
+                          if (f === "verifyVal"){
+                            verifyVal(response);
+                          }
                   } else {
                              alert('failure!'+ cli.status);
                   }
@@ -57,23 +64,23 @@ function sendData(user, step, k, d, i, f){
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2, "checkVal");
-  alert("yes");
-  alert(r);
-  if(r == 1){
-    document.getElementById('command').innerHTML = "username is taken";
-  }
 }
 
 function checkVal(i){
-  document.getElementById('command').innerHTML = "this is " + i;
-  r = document.getElementById('command').innerHTML;
-  alert(i === toString(1));
-  alert(i == 1);
-  alert(toString(i) == "1");
-  alert(toString(i) === toString(1));
-  alert(i == r);
-  alert(i === r);
+  var user = document.getElementById('username').value;
+  if(i == 1){
+    document.getElementById('response').innerHTML = "username " + user + " is  not available";
+  } else {
+    document.getElementById('response').innerHTML = "username " + user + " is available";
+    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
+    document.getElementById('button').style.display = 'block';
+  }
 
+  function verifyVal(i){
+    if (i == 1){
+      document.getElementById('passkey').innerHTML = "Password is correct";
+    }
+  }
   
     /*alert(i == 1);
   alert(i === 1);
@@ -118,10 +125,7 @@ function listen(option=0){
         t_pause = t_down - t_up;
         step_d = step_d + 2;
         ar.push([t_pause])
-        sendData(user, step_d, '', t_pause, option);
-        if (r === toString(0)){
-          document.getElementById('begin').innerHTML = "WRONG111111";
-        }
+        sendData(user, step_d, '', t_pause, option, "countVal");
       }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
@@ -142,15 +146,13 @@ function listen(option=0){
           c_up = 0;
           c_down = 0;
         document.getElementById('passkey').innerHTML = ar;
-        sendData(user, step_u, key1.join(""), t_up - t_down, option);
-        if (r === toString(0)){
-          document.getElementById('begin').innerHTML = "Correct";
-        }
-        if (r === toString(1)){
-          document.getElementById('begin').innerHTML = "Wrong";
-        }
+        sendData(user, step_u, key1.join(""), t_up - t_down, option, "countVal");
       }else{
-        document.getElementById('passkey').innerHTML = "DONZOO";
+        if (option == 0){
+          sendData(user, 20, '', points, option, '');
+        } else{
+          sendData(user, 20, '', points, option, "verifyVal");
+        }
       }
     }
   });
