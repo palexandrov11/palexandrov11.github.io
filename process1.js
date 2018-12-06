@@ -1,5 +1,5 @@
-var key1, key2, key3, t_up, t_down, t_pause, t_start;
-var ar_l = 0;
+var url = 'https://palexandrov.000webhostapp.com/index.php?'
+var t_pause, t_start;
 var c_down = 0;
 var c_up = 0;
 var t_up = 0;
@@ -17,18 +17,15 @@ function sendData(user, step, k, d, i, f){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                           var response = cli.responseText;
-                          alert(response);
                           if (f === "checkVal"){
                             checkVal(response);
                           } 
                           if (f === "countVal"){
                             if (response == 1){
-                 //             alert("counted");
                               points = points + 1;
                             }
                           }
                           if (f === "verifyVal"){
-                    //        alert(response + "here");
                             verifyVal(response);
                           }
                   } else {
@@ -36,32 +33,11 @@ function sendData(user, step, k, d, i, f){
                   }
               }
       };
-      var url = 'https://palexandrov.000webhostapp.com/index.php?' + 'user=' + String(user) + '&' + 
-      'step=' + String(step) + '&' + 'key=' + String(k) + '&' + 'duration=' + String(d) + 
-      '&' + 'option=' + String(i);
-      cli.open('GET', url, false);
+      var url_content = url + 'user=' + String(user) + '&' + 'step=' + String(step) + 
+      '&' + 'key=' + String(k) + '&' + 'duration=' + String(d) + '&' + 'option=' + String(i);
+      cli.open('GET', url_content, false);
       cli.send(null);
   }
-
-
-
-/*window.addEventListener("click", event => {
-  var u = document.getElementById('username').value;
-  if(u.length != 0){
-    var r = sendData(u, 0, 0, 0);
-    document.getElementById('test1').innerHTML = "username" + u;
-  }  
-});*/
-
-/*window.onload() = function(){
-  document.getElementById("button").style.display = 'none';
-}*/
-
-/*function hide(){
-  document.getElementById('button').style.display = 'none';
-}*/
-
-
 
 function checkUser(){
   var user = document.getElementById('username').value;
@@ -73,50 +49,25 @@ function checkVal(i){
   if(i == 1){
     document.getElementById('response').innerHTML = "Username " + user + " is  not available";
   } else {
-    document.getElementById('response').innerHTML = "username " + user + " is available";
+    document.getElementById('response').innerHTML = "Username " + user + " is available";
     document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   }
 }
 
-  function verifyVal(i){
-  //  alert("why no work" + i);
-  //  alert(i == 1);
-    if (i == 1){
-      document.getElementById('passkey').innerHTML = "Password is correct";
-      document.getElementById('begin').innerHTML = "Password is correct";
-    } else {
-      document.getElementById('passkey').innerHTML = "Password is incorrect correct";
-      document.getElementById('begin').innerHTML = "Password is incorrect correct";
+function verifyVal(i){
+  if (i == 1){
+    document.getElementById('passkey').innerHTML = "Password is correct";
+    document.getElementById('begin').innerHTML = "Password is correct";
+  } else {
+    document.getElementById('passkey').innerHTML = "Password is incorrect";
+    document.getElementById('begin').innerHTML = "Password is incorrect";
     }
-  }
-  
-    /*alert(i == 1);
-  alert(i === 1);
-  alert(r == 1);
-  alert(r == "1");
-  alert(i === toString(1));
-  alert(i == toString(1));
-  alert(r === "1");*/
- /* if (String(r) == 1){
-    document.getElementById('command').innerHTML = "it works";
-  }*/
+}
 
-
-
-/* if (toString(rval) === toString(0)){
-   // document.getElementById('response').innerHTML = "username " + user + " is available";
-    document.getElementById('username').innerHTML = '';
-    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
-    document.getElementById('button').style.display = 'block';
-  } 
- if (toString(rval) === toString(1)){
-    document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
-    document.getElementById('username').innerHTML = '';
-  }
-}*/
-
-
+function verify(){
+  listen(1);
+}
 
 function listen(option=0){
   document.getElementById('begin').innerHTML = "Listening...";
@@ -141,7 +92,6 @@ function listen(option=0){
             sendData(user, 20, '', points, option, '');
             document.getElementById('passkey').innerHTML = "DONE!";
           } else{
-  //          alert("sent");
             sendData(user, 20, '', points, option, "verifyVal");
           }
         }
@@ -171,7 +121,6 @@ function listen(option=0){
           sendData(user, 20, '', points, option, '');
           document.getElementById('passkey').innerHTML = "DONE!";
         } else{
- //         alert("yes");
           sendData(user, 20, '', points, option, "verifyVal");
         }
       }
@@ -179,11 +128,6 @@ function listen(option=0){
   });
 }
 
-
-
-function verify(){
-  listen(1);
-}
 
 
 
