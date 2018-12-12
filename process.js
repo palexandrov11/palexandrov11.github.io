@@ -17,7 +17,7 @@ function sendData(user, step, k, d, i, f){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                           var response = cli.responseText;
-                          alert(response);
+               //           alert(response);
                           if (f === "checkVal"){
                             checkVal(response);
                           } 

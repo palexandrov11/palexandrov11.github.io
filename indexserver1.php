@@ -11,68 +11,49 @@ $key = $_GET["key"];
 $duration = $_GET["duration"];
 $option = $_GET["option"];
 
-$p_int = '';
-$t_int = '';
 
-
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql_u = $conn->prepare("SELECT user FROM Passwords WHERE user = $");
-$sql_u->bind_param("s", $user);
-$sql_u->execute();
-$a = $sql_u->fetchAll(PDO::FETCH_ASSOC);
-
-
-$sql_u = "SELECT user FROM Passwords WHERE user = '$user'";
-$result1 = $conn->query($sql_u);
-$a = $result1->fetch_assoc();
+$pdo = new PDO("mysql:host=localhost;dbname=id7448806_localhost", $username, $password);
 
 if ($option != "2"){
     $t = "t".$step;
     $p = "p".$step;
     if ($option === '0'){
       if ($key === ''){
-          $sql_t = "UPDATE Passwords SET "."$t"." = "."'$duration' WHERE user = '$user'";
-          $conn->query($sql_t);
+          $update = $pdo->prepare("UPDATE Passwords SET "."$t"." = ".":duration WHERE user = :user");
+          $update->execute(array(':duration' => $duration, ':user' => $user));
           echo "1";
       }else{
-          $sql_p = "UPDATE Passwords SET "."$t"."="."'$duration',"."$p"."="."'$key' WHERE user = '$user'";
-          $conn->query($sql_p);
+          $update = $pdo->prepare("UPDATE Passwords SET "."$t"."=".":duration,"."$p"."=".":key WHERE user = :user");
+          $update->execute(array(':duration' => $duration, ':key' => $key, ':user' => $user));
           echo "1";
       }
     }else {
       if ($key === ''){
-          $sql_v = "SELECT "."$t"." FROM Passwords WHERE user = '$user'";
-          $result_v = $conn->query($sql_v);
-          while ($row = $result_v->fetch_assoc()){
-            $t_int = intval($row[$t]);
-          }
+          $select_d = $pdo->prepare("SELECT "."$t"." FROM Passwords WHERE user = :user");
+          $select_d->execute(array(':user' => $user));
+          $i = $select_d->fetch();
+          $response_d = $i["$t"];
           if ($step === "20"){
-              if ($t_int === intval($duration)){
+              if (intval($response_d) === intval($duration)){
                   echo "1";
               }else{
                   echo "0";
               }
           } else{
-                if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
+                if ((intval($response_d) - 250 < intval($duration)) && (intval($duration) < intval($response_d) + 250)){
                     echo "1";
                 }else{
                      echo "0";
-                 }
+                }
             }
       } else{
-          $sql_v = "SELECT "."$p, $t"." FROM Passwords WHERE user = '$user'";
-          $result_v = $conn->query($sql_v);
-          while ($row = $result_v->fetch_assoc()){
-             $p_int = intval($row[$p]);
-             $t_int = intval($row[$t]);
-          }
-          if ($p_int === intval($key)){
-             if (($t_int - 200 < intval($duration)) && (intval($duration) < $t_int + 200)){
+          $select_k = $pdo->prepare("SELECT "."$p, $t"." FROM Passwords WHERE user = :user");
+          $select_k->execute(array(':user' => $user));
+          $j = $select_k->fetch();
+          $response_k = $j["$p"];
+          $response_kd = $j["t"];
+          if (intval($response_k) === intval($key)){
+             if ((intval($response_kd) - 250 < intval($duration)) && (intval($duration) < intval($response_kd) + 250)){
               echo "1";
              }else{
               echo "0";
@@ -81,14 +62,17 @@ if ($option != "2"){
         }
     }
 } else{
-  if ($a === NULL){
-    $sql_n = "INSERT INTO Passwords(user) Values('$user')";
-    $conn->query($sql_n);
-    echo "0";
-  }else{
-    echo "1";
+  $select_u = $pdo->prepare("SELECT user FROM Passwords WHERE user = :user");
+  $select_u->execute(array(":user" => $user));
+  $a = $select_u->fetch();
+  $response_u = $a["user"];
+  if ($response_u === NULL){
+    $insert = $pdo->prepare("INSERT INTO Passwords(user) Values(:user)"); 
+    $insert->execute(array(":user" => $user));
+    echo '0';
+  } else {
+    echo '1';
   }
-}
 
 
 
