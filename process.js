@@ -17,13 +17,11 @@ function sendData(user, step, k, d, i, f){
               if (cli.readyState === 4) {
                   if (cli.status === 200) {
                           var response = cli.responseText;
-               //           alert(response);
                           if (f === "checkVal"){
                             checkVal(response);
                           } 
                           if (f === "countVal"){
                             if (response == 1){
-                 //             alert("counted");
                               points = points + 1;
                             }
                           }
@@ -44,25 +42,6 @@ function sendData(user, step, k, d, i, f){
   }
 
 
-
-/*window.addEventListener("click", event => {
-  var u = document.getElementById('username').value;
-  if(u.length != 0){
-    var r = sendData(u, 0, 0, 0);
-    document.getElementById('test1').innerHTML = "username" + u;
-  }  
-});*/
-
-/*window.onload() = function(){
-  document.getElementById("button").style.display = 'none';
-}*/
-
-/*function hide(){
-  document.getElementById('button').style.display = 'none';
-}*/
-
-
-
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2, "checkVal");
@@ -79,9 +58,7 @@ function checkVal(i){
   }
 }
 
-  function verifyVal(i){
-  //  alert("why no work" + i);
-  //  alert(i == 1);
+function verifyVal(i){
     if (i == 1){
       document.getElementById('passkey').innerHTML = "Password is correct";
       document.getElementById('begin').innerHTML = "Password is correct";
@@ -90,34 +67,7 @@ function checkVal(i){
       document.getElementById('begin').innerHTML = "Password is incorrect correct";
     }
   }
-  
-    /*alert(i == 1);
-  alert(i === 1);
-  alert(r == 1);
-  alert(r == "1");
-  alert(i === toString(1));
-  alert(i == toString(1));
-  alert(r === "1");*/
- /* if (String(r) == 1){
-    document.getElementById('command').innerHTML = "it works";
-  }*/
-
-
-
-/* if (toString(rval) === toString(0)){
-   // document.getElementById('response').innerHTML = "username " + user + " is available";
-    document.getElementById('username').innerHTML = '';
-    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
-    document.getElementById('button').style.display = 'block';
-  } 
- if (toString(rval) === toString(1)){
-    document.getElementById('response').innerHTML = "username " + user + " is Taken" + toString(r);
-    document.getElementById('username').innerHTML = '';
-  }
-}*/
-
-
-
+ 
 function listen(option=0){
   document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
@@ -141,7 +91,6 @@ function listen(option=0){
             sendData(user, 20, '', points, option, '');
             document.getElementById('passkey').innerHTML = "DONE!";
           } else{
-  //          alert("sent");
             sendData(user, 20, '', points, option, "verifyVal");
           }
         }
@@ -171,14 +120,12 @@ function listen(option=0){
           sendData(user, 20, '', points, option, '');
           document.getElementById('passkey').innerHTML = "DONE!";
         } else{
- //         alert("yes");
           sendData(user, 20, '', points, option, "verifyVal");
         }
       }
     }
   });
 }
-
 
 
 function verify(){
