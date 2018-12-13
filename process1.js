@@ -83,13 +83,14 @@ function listen(option=0){
     }
     if (ar.length == 0){
       t_start = time();
+      t_down = t_start;
     } 
     if ((ar.length != 0) && (c_down = 1)){
       t_down = time();
       t_pause = t_down - t_up;
       step_d = step_d + 2;
       ar.push([t_pause]);
-      alert(t_pause);
+   //   alert(t_pause);
       sendDecision(user, step_d, key_val, t_down, t_pause, option);
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
@@ -107,7 +108,7 @@ function listen(option=0){
       c_down = 0;
       t_up = time();
       k_pause = t_up - t_down;
-      alert(k_pause);
+   //   alert(k_pause);
       sendDecision(user, step_u, key1.join(""), t_up, k_pause, option);
     }
   });
