@@ -72,7 +72,7 @@ function verifyVal(i){
   }
  
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "Listening...";
+  document.getElementById('begin').innerHTML = "llistening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
@@ -83,13 +83,14 @@ function listen(option=0){
     }
     if (ar.length == 0){
       t_start = time();
-      t_down = t_start;
     } 
-    if ((ar.length != 0) && (c_down == 1)){
+    if (c_down == 1){
       t_down = time();
-      t_pause = t_down - t_up;
-      step_d = step_d + 2;
-      sendDecision(user, step_d, key_val, t_down, t_pause, option);
+      if (ar.length != 0){
+        t_pause = t_down - t_up;
+        step_d = step_d + 2;
+        sendDecision(user, step_d, key_val, t_down, t_pause, option);
+      }
     }
     if (!ar1.hasOwnProperty(event.keyCode)){
       ar1[event.keyCode] = 0;
