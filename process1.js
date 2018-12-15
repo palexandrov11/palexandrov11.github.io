@@ -66,13 +66,13 @@ function verifyVal(i){
       document.getElementById('passkey').innerHTML = "Password is correct";
       document.getElementById('begin').innerHTML = "Password is correct";
     } else {
-      document.getElementById('passkey').innerHTML = "Password is incorrect correct";
-      document.getElementById('begin').innerHTML = "Password is incorrect correct";
+      document.getElementById('passkey').innerHTML = "Password is incorrect";
+      document.getElementById('begin').innerHTML = "Password is incorrect";
     }
   }
  
 function listen(option=0){
-  document.getElementById('begin').innerHTML = "llistening...";
+  document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
   window.addEventListener("keydown", event => {
     c_down = c_down + 1;
