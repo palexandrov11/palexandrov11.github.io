@@ -56,7 +56,7 @@ function checkVal(i){
     document.getElementById('response').innerHTML = "Username " + user + " is  not available";
   } else {
     document.getElementById('response').innerHTML = "username " + user + " is available";
-    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 10 seconds from first key press)";
+    document.getElementById('command').innerHTML = "Press start and enter in your passwords (Maximum 5 seconds from first key press)";
     document.getElementById('button').style.display = 'block';
   }
 }
