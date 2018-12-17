@@ -5,15 +5,21 @@ $username = "id7448806_pa";
 $password = "55555";
 $database = "id7448806_localhost";
 
+
+//parse the GET request from the browser
 $user = $_GET["user"];
 $step = $_GET["step"];
 $key = $_GET["key"];
 $duration = $_GET["duration"];
 $option = $_GET["option"];
 
-
+//establish connection with database
 $pdo = new PDO("mysql:host=localhost;dbname=id7448806_localhost", $username, $password);
 
+//determine whether user information is being verified (login) or updated (registration)
+//use step variable to correctly identify the respective cell in the database for a given input
+//echo "1" if cell was succesfully updated or input was validated and 
+//echo "0" if cell was not succesfully updated or input did not match data in given cell 
 if ($option != "2"){
     $t = "t".$step;
     $p = "p".$step;

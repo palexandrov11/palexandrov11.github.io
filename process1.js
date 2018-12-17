@@ -14,6 +14,12 @@ var points = 0;
 var duration = 0;
 var key_val = 0;
 
+
+//prepares synchronous XMLHttpRequest and waits for response,
+//the server echoes a value (either "1" or "0") and this function
+//keeps track of the "score"
+//score must match in order for user to be verified;
+//every input and pause sent to server was verified with a response of "1"
 function sendData(user, step, k, d, i, f){
       var cli = new XMLHttpRequest();
       cli.onreadystatechange = function() {
@@ -44,12 +50,13 @@ function sendData(user, step, k, d, i, f){
       cli.send(null);
   }
 
-
+//check if username is available
 function checkUser(){
   var user = document.getElementById('username').value;
   sendData(user, 0, 0, 0, 2, "checkVal");
 }
 
+//check server response to username availability
 function checkVal(i){
   var user = document.getElementById('username').value;
   if(i == 1){
@@ -61,6 +68,7 @@ function checkVal(i){
   }
 }
 
+//verify the "score" with the server after all inputs were sent 
 function verifyVal(i){
     if (i == 1){
       document.getElementById('passkey').innerHTML = "Password is correct";
@@ -71,6 +79,10 @@ function verifyVal(i){
     }
   }
  
+//listen to keydown and keyup events while maintaining time
+//update empty dictionary with every key event to create key codes for simultaneous inputs
+//keep track of each input by indexing them with "step_d" and "step_u" -
+//so that server can update the correct cell in the database with each input
 function listen(option=0){
   document.getElementById('begin').innerHTML = "Listening...";
   var user = document.getElementById('username').value;
@@ -112,6 +124,7 @@ function listen(option=0){
   });
 }
 
+//format the type of GET request - verify, update, or check score 
 function sendDecision(user, step, key_val, t, duration, option){
   if ((key_val == 13) || (t - t_start > 5000)){
     if (option == 0){
