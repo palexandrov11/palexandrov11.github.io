@@ -10,7 +10,7 @@ To log in click log in, enter username, enter password, and press enter to submi
 
 About "Rhythmic Authentication System":
 
-The purpose of this project was to develop a more demanding password system than the universal standard (key/symbol) while attempting to maintain a similar level of usability. The program can interpret simultaneous key strokes (increasing the variety of a single key input greatly - by nine fingers at least). Moreover, the program records the duration of each key stroke, and the duration between key strokes. Essentially, the password system is a melody (key inputs) with a distinct rhythm (duration of inputs and pauses). The passwords are recorded in a database and when a user is signing in, the password is verified in "real time" - each duration and key input is checked separately. 
+The purpose of this project was to develop a more demanding password system than the universal standard (key/symbol) while attempting to maintain a similar level of usability. The program can interpret simultaneous key strokes (increasing the variety of a single key input greatly - by nine fingers at least). Moreover, the program records the duration of each key stroke, and the duration between key strokes. Essentially, the password system is a melody (key inputs) with a distinct rhythm (duration of inputs and pauses). The passwords are recorded in a database and when a user is signing in, the password is verified in "real time" - each duration and key input is checked separately. The server accounts for delays (+/- 250 ms with good internet) and for natural human error (+/- 250 ms - still very difficult to recreate).
 
 
 
